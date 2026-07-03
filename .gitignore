@@ -1,0 +1,6 @@
+# internal
+.DS_Store
+*.bak
+**/_*
+**/references.md
+**/diagrams/fig09-*

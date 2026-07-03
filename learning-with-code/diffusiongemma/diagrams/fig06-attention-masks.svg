@@ -1,0 +1,61 @@
+<svg viewBox="0 0 860 448" xmlns="http://www.w3.org/2000/svg" role="img" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style><defs><filter id='sgsoft' x='-30%' y='-30%' width='160%' height='170%'><feDropShadow dx='0' dy='1.2' stdDeviation='2.4' flood-color='#1f2937' flood-opacity='0.09'/></filter></defs>
+  <title>Two attention masks, one transformer</title>
+  <desc>While denoising, the canvas uses a full bidirectional attention mask so every position can see every other. When a finished block is committed to the KV cache, a causal lower-triangular mask is used so each token sees only earlier ones.</desc>
+
+  <rect x="4" y="4" width="852" height="440" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="40" font-size="19" font-weight="700" fill="#111827">Same weights, <tspan fill="#3E9E7B">different masks</tspan></text>
+  <text x="32" y="60" font-size="12" fill="#6B7280">DiffusionGemma gets both behaviors from one attention module by swapping the mask it is fed.</text>
+
+  <!-- Left: bidirectional -->
+  <text x="170" y="98" font-size="13.5" font-weight="700" text-anchor="middle" fill="#3E9E7B">Denoising → bidirectional</text>
+  <text x="170" y="116" font-size="11" text-anchor="middle" fill="#6B7280">full canvas self-attention</text>
+  <g>
+    <!-- 8x8 all filled -->
+    <g fill="#C6EAD9" stroke="#FFFFFF" stroke-width="1.5">
+      <rect x="96" y="130" width="24" height="24"/><rect x="120" y="130" width="24" height="24"/><rect x="144" y="130" width="24" height="24"/><rect x="168" y="130" width="24" height="24"/><rect x="192" y="130" width="24" height="24"/><rect x="216" y="130" width="24" height="24"/><rect x="240" y="130" width="24" height="24"/><rect x="264" y="130" width="24" height="24"/>
+      <rect x="96" y="154" width="24" height="24"/><rect x="120" y="154" width="24" height="24"/><rect x="144" y="154" width="24" height="24"/><rect x="168" y="154" width="24" height="24"/><rect x="192" y="154" width="24" height="24"/><rect x="216" y="154" width="24" height="24"/><rect x="240" y="154" width="24" height="24"/><rect x="264" y="154" width="24" height="24"/>
+      <rect x="96" y="178" width="24" height="24"/><rect x="120" y="178" width="24" height="24"/><rect x="144" y="178" width="24" height="24"/><rect x="168" y="178" width="24" height="24"/><rect x="192" y="178" width="24" height="24"/><rect x="216" y="178" width="24" height="24"/><rect x="240" y="178" width="24" height="24"/><rect x="264" y="178" width="24" height="24"/>
+      <rect x="96" y="202" width="24" height="24"/><rect x="120" y="202" width="24" height="24"/><rect x="144" y="202" width="24" height="24"/><rect x="168" y="202" width="24" height="24"/><rect x="192" y="202" width="24" height="24"/><rect x="216" y="202" width="24" height="24"/><rect x="240" y="202" width="24" height="24"/><rect x="264" y="202" width="24" height="24"/>
+      <rect x="96" y="226" width="24" height="24"/><rect x="120" y="226" width="24" height="24"/><rect x="144" y="226" width="24" height="24"/><rect x="168" y="226" width="24" height="24"/><rect x="192" y="226" width="24" height="24"/><rect x="216" y="226" width="24" height="24"/><rect x="240" y="226" width="24" height="24"/><rect x="264" y="226" width="24" height="24"/>
+      <rect x="96" y="250" width="24" height="24"/><rect x="120" y="250" width="24" height="24"/><rect x="144" y="250" width="24" height="24"/><rect x="168" y="250" width="24" height="24"/><rect x="192" y="250" width="24" height="24"/><rect x="216" y="250" width="24" height="24"/><rect x="240" y="250" width="24" height="24"/><rect x="264" y="250" width="24" height="24"/>
+      <rect x="96" y="274" width="24" height="24"/><rect x="120" y="274" width="24" height="24"/><rect x="144" y="274" width="24" height="24"/><rect x="168" y="274" width="24" height="24"/><rect x="192" y="274" width="24" height="24"/><rect x="216" y="274" width="24" height="24"/><rect x="240" y="274" width="24" height="24"/><rect x="264" y="274" width="24" height="24"/>
+      <rect x="96" y="298" width="24" height="24"/><rect x="120" y="298" width="24" height="24"/><rect x="144" y="298" width="24" height="24"/><rect x="168" y="298" width="24" height="24"/><rect x="192" y="298" width="24" height="24"/><rect x="216" y="298" width="24" height="24"/><rect x="240" y="298" width="24" height="24"/><rect x="264" y="298" width="24" height="24"/>
+    </g>
+    <rect x="96" y="130" width="192" height="192" fill="none" stroke="#8ECCB6" filter="url(#sgsoft)" rx="10"/>
+  </g>
+
+  <!-- Right: causal -->
+  <text x="600" y="98" font-size="13.5" font-weight="700" text-anchor="middle" fill="#6B4FA8">Commit → causal</text>
+  <text x="600" y="116" font-size="11" text-anchor="middle" fill="#6B7280">lower-triangular (sees only earlier)</text>
+  <g stroke="#FFFFFF" stroke-width="1.5">
+    <!-- row r (y), fill columns c<=r with purple, else empty -->
+    <g fill="#DCC7F4">
+      <rect x="526" y="130" width="24" height="24"/>
+      <rect x="526" y="154" width="24" height="24"/><rect x="550" y="154" width="24" height="24"/>
+      <rect x="526" y="178" width="24" height="24"/><rect x="550" y="178" width="24" height="24"/><rect x="574" y="178" width="24" height="24"/>
+      <rect x="526" y="202" width="24" height="24"/><rect x="550" y="202" width="24" height="24"/><rect x="574" y="202" width="24" height="24"/><rect x="598" y="202" width="24" height="24"/>
+      <rect x="526" y="226" width="24" height="24"/><rect x="550" y="226" width="24" height="24"/><rect x="574" y="226" width="24" height="24"/><rect x="598" y="226" width="24" height="24"/><rect x="622" y="226" width="24" height="24"/>
+      <rect x="526" y="250" width="24" height="24"/><rect x="550" y="250" width="24" height="24"/><rect x="574" y="250" width="24" height="24"/><rect x="598" y="250" width="24" height="24"/><rect x="622" y="250" width="24" height="24"/><rect x="646" y="250" width="24" height="24"/>
+      <rect x="526" y="274" width="24" height="24"/><rect x="550" y="274" width="24" height="24"/><rect x="574" y="274" width="24" height="24"/><rect x="598" y="274" width="24" height="24"/><rect x="622" y="274" width="24" height="24"/><rect x="646" y="274" width="24" height="24"/><rect x="670" y="274" width="24" height="24"/>
+      <rect x="526" y="298" width="24" height="24"/><rect x="550" y="298" width="24" height="24"/><rect x="574" y="298" width="24" height="24"/><rect x="598" y="298" width="24" height="24"/><rect x="622" y="298" width="24" height="24"/><rect x="646" y="298" width="24" height="24"/><rect x="670" y="298" width="24" height="24"/><rect x="694" y="298" width="24" height="24"/>
+    </g>
+    <g fill="#F7F8FA">
+      <rect x="550" y="130" width="24" height="24"/><rect x="574" y="130" width="24" height="24"/><rect x="598" y="130" width="24" height="24"/><rect x="622" y="130" width="24" height="24"/><rect x="646" y="130" width="24" height="24"/><rect x="670" y="130" width="24" height="24"/><rect x="694" y="130" width="24" height="24"/>
+      <rect x="574" y="154" width="24" height="24"/><rect x="598" y="154" width="24" height="24"/><rect x="622" y="154" width="24" height="24"/><rect x="646" y="154" width="24" height="24"/><rect x="670" y="154" width="24" height="24"/><rect x="694" y="154" width="24" height="24"/>
+      <rect x="598" y="178" width="24" height="24"/><rect x="622" y="178" width="24" height="24"/><rect x="646" y="178" width="24" height="24"/><rect x="670" y="178" width="24" height="24"/><rect x="694" y="178" width="24" height="24"/>
+      <rect x="622" y="202" width="24" height="24"/><rect x="646" y="202" width="24" height="24"/><rect x="670" y="202" width="24" height="24"/><rect x="694" y="202" width="24" height="24"/>
+      <rect x="646" y="226" width="24" height="24"/><rect x="670" y="226" width="24" height="24"/><rect x="694" y="226" width="24" height="24"/>
+      <rect x="670" y="250" width="24" height="24"/><rect x="694" y="250" width="24" height="24"/>
+      <rect x="694" y="274" width="24" height="24"/>
+    </g>
+    <rect x="526" y="130" width="192" height="192" fill="none" stroke="#9E62D6" filter="url(#sgsoft)" rx="10"/>
+  </g>
+
+  <text x="40" y="352" font-size="11.5" fill="#6B7280">rows = query position · columns = key position · a filled cell = "this query may attend to this key"</text>
+  <text x="40" y="384" font-size="11.8" fill="#4B5563">While denoising, every canvas position sees every other (it must, to fix a token by looking left AND right). When a finished</text>
+  <text x="40" y="402" font-size="11.8" fill="#4B5563">block is written to the KV cache, the causal mask restores left-to-right order so later blocks can build on it.</text>
+
+  <text x="40" y="420" font-size="11.8" fill="#4B5563">A third mask rides along while denoising: the 25 local layers see one shared trailing 1,024-token window (block-local).</text>
+  <text x="40" y="438" font-size="10" font-style="italic" fill="#C0C5CD">gemma/diffusion/_sampler.py · _make_global / _make_causal / _make_block_local_attention_mask</text>
+</svg>

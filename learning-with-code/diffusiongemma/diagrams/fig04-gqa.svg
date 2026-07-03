@@ -1,0 +1,77 @@
+<svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" role="img" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style><defs><filter id='sgsoft' x='-30%' y='-30%' width='160%' height='170%'><feDropShadow dx='0' dy='1.2' stdDeviation='2.4' flood-color='#1f2937' flood-opacity='0.09'/></filter></defs>
+  <title>Grouped-Query Attention in DiffusionGemma</title>
+  <desc>Local layers map 16 query heads onto 8 shared key-value heads (2 query heads per KV head). Global layers map 16 query heads onto just 2 key-value heads, which additionally share one projection for both keys and values.</desc>
+
+  <rect x="4" y="4" width="892" height="432" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="40" font-size="19" font-weight="700" fill="#111827"><tspan fill="#9CA3AF">MHA</tspan> → <tspan fill="#3E9E7B">GQA</tspan>: sharing KV heads shrinks the cache</text>
+  <text x="32" y="60" font-size="12" fill="#6B7280">The KV cache stores num_kv_heads keys/values per token. Fewer KV heads = smaller cache.</text>
+
+  <!-- Local GQA -->
+  <text x="32" y="98" font-size="13.5" font-weight="700" fill="#374151">Local (sliding) layers · 16 Q → 8 KV  (2 query heads per KV head)</text>
+  <g>
+    <!-- 16 query heads -->
+    <g fill="#A6E1CB" stroke="#3E9E7B">
+      <rect x="180" y="112" width="22" height="20" rx="3"/><rect x="214" y="112" width="22" height="20" rx="3"/>
+      <rect x="248" y="112" width="22" height="20" rx="3"/><rect x="282" y="112" width="22" height="20" rx="3"/>
+      <rect x="316" y="112" width="22" height="20" rx="3"/><rect x="350" y="112" width="22" height="20" rx="3"/>
+      <rect x="384" y="112" width="22" height="20" rx="3"/><rect x="418" y="112" width="22" height="20" rx="3"/>
+      <rect x="452" y="112" width="22" height="20" rx="3"/><rect x="486" y="112" width="22" height="20" rx="3"/>
+      <rect x="520" y="112" width="22" height="20" rx="3"/><rect x="554" y="112" width="22" height="20" rx="3"/>
+      <rect x="588" y="112" width="22" height="20" rx="3"/><rect x="622" y="112" width="22" height="20" rx="3"/>
+      <rect x="656" y="112" width="22" height="20" rx="3"/><rect x="690" y="112" width="22" height="20" rx="3"/>
+    </g>
+    <text x="150" y="127" font-size="11" text-anchor="end" fill="#3E9E7B">16 Q</text>
+    <!-- grouping lines to 8 kv -->
+    <g stroke="#B6BEC8" stroke-width="1">
+      <path d="M191,132 L208,156"/><path d="M225,132 L208,156"/>
+      <path d="M259,132 L276,156"/><path d="M293,132 L276,156"/>
+      <path d="M327,132 L344,156"/><path d="M361,132 L344,156"/>
+      <path d="M395,132 L412,156"/><path d="M429,132 L412,156"/>
+      <path d="M463,132 L480,156"/><path d="M497,132 L480,156"/>
+      <path d="M531,132 L548,156"/><path d="M565,132 L548,156"/>
+      <path d="M599,132 L616,156"/><path d="M633,132 L616,156"/>
+      <path d="M667,132 L684,156"/><path d="M701,132 L684,156"/>
+    </g>
+    <!-- 8 kv heads -->
+    <g fill="#EEF0F3" stroke="#B6BEC8">
+      <rect x="194" y="156" width="28" height="20" rx="3"/><rect x="262" y="156" width="28" height="20" rx="3"/>
+      <rect x="330" y="156" width="28" height="20" rx="3"/><rect x="398" y="156" width="28" height="20" rx="3"/>
+      <rect x="466" y="156" width="28" height="20" rx="3"/><rect x="534" y="156" width="28" height="20" rx="3"/>
+      <rect x="602" y="156" width="28" height="20" rx="3"/><rect x="670" y="156" width="28" height="20" rx="3"/>
+    </g>
+    <text x="150" y="171" font-size="11" text-anchor="end" fill="#6B7280">8 KV</text>
+  </g>
+
+  <!-- Global GQA -->
+  <text x="32" y="232" font-size="13.5" font-weight="700" fill="#374151">Global layers · 16 Q → 2 KV  ·  K ≡ V (one shared projection)</text>
+  <g>
+    <g fill="#A6E1CB" stroke="#3E9E7B">
+      <rect x="180" y="246" width="22" height="20" rx="3"/><rect x="214" y="246" width="22" height="20" rx="3"/>
+      <rect x="248" y="246" width="22" height="20" rx="3"/><rect x="282" y="246" width="22" height="20" rx="3"/>
+      <rect x="316" y="246" width="22" height="20" rx="3"/><rect x="350" y="246" width="22" height="20" rx="3"/>
+      <rect x="384" y="246" width="22" height="20" rx="3"/><rect x="418" y="246" width="22" height="20" rx="3"/>
+      <rect x="452" y="246" width="22" height="20" rx="3"/><rect x="486" y="246" width="22" height="20" rx="3"/>
+      <rect x="520" y="246" width="22" height="20" rx="3"/><rect x="554" y="246" width="22" height="20" rx="3"/>
+      <rect x="588" y="246" width="22" height="20" rx="3"/><rect x="622" y="246" width="22" height="20" rx="3"/>
+      <rect x="656" y="246" width="22" height="20" rx="3"/><rect x="690" y="246" width="22" height="20" rx="3"/>
+    </g>
+    <text x="150" y="261" font-size="11" text-anchor="end" fill="#3E9E7B">16 Q</text>
+    <g stroke="#B6BEC8" stroke-width="1">
+      <path d="M191,266 L300,292"/><path d="M225,266 L300,292"/><path d="M259,266 L300,292"/><path d="M293,266 L300,292"/>
+      <path d="M327,266 L300,292"/><path d="M361,266 L300,292"/><path d="M395,266 L300,292"/><path d="M429,266 L300,292"/>
+      <path d="M463,266 L572,292"/><path d="M497,266 L572,292"/><path d="M531,266 L572,292"/><path d="M565,266 L572,292"/>
+      <path d="M599,266 L572,292"/><path d="M633,266 L572,292"/><path d="M667,266 L572,292"/><path d="M701,266 L572,292"/>
+    </g>
+    <rect x="262" y="292" width="76" height="22" rx="4" fill="#E9ECF1" stroke="#B6BDC7"/><text x="300" y="307" font-size="10.5" text-anchor="middle" fill="#5B6470">K≡V</text>
+    <rect x="534" y="292" width="76" height="22" rx="4" fill="#E9ECF1" stroke="#B6BDC7"/><text x="572" y="307" font-size="10.5" text-anchor="middle" fill="#5B6470">K≡V</text>
+    <text x="150" y="307" font-size="11" text-anchor="end" fill="#6B7280">2 KV</text>
+  </g>
+
+  <line x1="32" y1="344" x2="868" y2="344" stroke="#EDEFF2"/>
+  <rect x="32" y="362" width="14" height="14" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><text x="54" y="374" font-size="11.5" fill="#4B5563">query head</text>
+  <rect x="180" y="362" width="14" height="14" rx="3" fill="#EEF0F3" stroke="#B6BEC8"/><text x="202" y="374" font-size="11.5" fill="#4B5563">key/value head</text>
+  <text x="360" y="374" font-size="11.5" fill="#6B7280">(for comparison, plain MHA would be 16 Q → 16 KV)</text>
+
+  <text x="32" y="412" font-size="10" font-style="italic" fill="#C0C5CD">gemma/gm/nn/gemma4/_modules.py · Attention.use_gqa, einsum 'BTKGH,BSKH→BTKGS'; global k_eq_v_global=True</text>
+</svg>

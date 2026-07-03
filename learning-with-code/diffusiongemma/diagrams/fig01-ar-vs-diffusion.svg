@@ -1,0 +1,108 @@
+<svg viewBox="0 0 940 552" xmlns="http://www.w3.org/2000/svg" role="img" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style><defs><filter id='sgsoft' x='-30%' y='-30%' width='160%' height='170%'><feDropShadow dx='0' dy='1.2' stdDeviation='2.4' flood-color='#1f2937' flood-opacity='0.09'/></filter></defs>
+  <title>Autoregressive vs. Diffusion generation</title>
+  <desc>An autoregressive LLM writes one token per forward pass using causal attention. DiffusionGemma denoises a whole 256-token canvas over a few bidirectional passes, then commits blocks left to right.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/>
+    </marker>
+    <marker id="arrTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4FA98B"/>
+    </marker>
+  </defs>
+
+  <rect x="4" y="4" width="932" height="544" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="40" font-size="19" font-weight="700" fill="#111827"><tspan fill="#9CA3AF">Autoregressive</tspan> vs. <tspan fill="#3E9E7B">Diffusion</tspan>: two ways to write a sequence</text>
+
+  <!-- Panel A: Autoregressive -->
+  <text x="32" y="74" font-size="14" font-weight="700" fill="#374151">❶  Autoregressive LLM</text>
+  <text x="32" y="92" font-size="11.5" fill="#6B7280">1 token per forward pass · causal (left → right)</text>
+
+  <g>
+    <rect x="40"  y="108" width="58" height="30" rx="6" fill="#EEF0F3" stroke="#B6BEC8"/>
+    <text x="69"  y="127" font-size="12" text-anchor="middle" fill="#4B5563">The</text>
+    <rect x="110" y="108" width="58" height="30" rx="6" fill="#EEF0F3" stroke="#B6BEC8"/>
+    <text x="139" y="127" font-size="12" text-anchor="middle" fill="#4B5563">model</text>
+    <rect x="180" y="108" width="58" height="30" rx="6" fill="#C6EAD9" stroke="#4FA98B"/>
+    <text x="209" y="127" font-size="12" text-anchor="middle" fill="#1F5C49">picks</text>
+    <rect x="250" y="108" width="58" height="30" rx="6" fill="#C6EAD9" stroke="#4FA98B"/>
+    <text x="279" y="127" font-size="12" text-anchor="middle" fill="#1F5C49">a</text>
+    <rect x="320" y="108" width="58" height="30" rx="6" fill="#A6E1CB" stroke="#3E9E7B" stroke-width="2"/>
+    <text x="349" y="127" font-size="12" text-anchor="middle" fill="#14503D" font-weight="700">word</text>
+    <text x="349" y="103" font-size="9.5" text-anchor="middle" fill="#3E9E7B" font-weight="700">new</text>
+    <!-- causal arrows above -->
+    <path d="M69,106 C 95,90 113,90 139,106"   fill="none" stroke="#9CA3AF" stroke-width="1.2" marker-end="url(#arr)"/>
+    <path d="M139,106 C 165,90 183,90 209,106" fill="none" stroke="#9CA3AF" stroke-width="1.2" marker-end="url(#arr)"/>
+    <path d="M209,106 C 235,90 253,90 279,106" fill="none" stroke="#9CA3AF" stroke-width="1.2" marker-end="url(#arr)"/>
+    <path d="M279,106 C 305,90 323,90 349,106" fill="none" stroke="#9CA3AF" stroke-width="1.2" marker-end="url(#arr)"/>
+    <text x="640" y="120" font-size="11.5" fill="#6B7280">5 tokens → 5 sequential passes;</text>
+    <text x="640" y="136" font-size="11.5" fill="#6B7280">each token sees only its left.</text>
+  </g>
+
+  <line x1="32" y1="160" x2="908" y2="160" stroke="#EDEFF2" stroke-width="1"/>
+
+  <!-- Panel B: Diffusion -->
+  <text x="32" y="186" font-size="14" font-weight="700" fill="#374151">❷  DiffusionGemma — block diffusion</text>
+  <text x="32" y="204" font-size="11.5" fill="#6B7280">the whole 256-token canvas is denoised together · bidirectional</text>
+
+  <!-- Pass rows -->
+  <g font-size="12" text-anchor="middle">
+    <!-- Pass 1: all noise -->
+    <text x="78" y="238" font-size="11" text-anchor="start" fill="#6B7280">Pass 1</text>
+    <rect x="130" y="224" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="158" y="241" fill="#9E3528">?</text>
+    <rect x="194" y="224" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="222" y="241" fill="#9E3528">?</text>
+    <rect x="258" y="224" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="286" y="241" fill="#9E3528">?</text>
+    <rect x="322" y="224" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="350" y="241" fill="#9E3528">?</text>
+    <rect x="386" y="224" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="414" y="241" fill="#9E3528">?</text>
+    <rect x="450" y="224" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="478" y="241" fill="#9E3528">?</text>
+
+    <!-- Pass 2 -->
+    <text x="78" y="278" font-size="11" text-anchor="start" fill="#6B7280">Pass 2</text>
+    <rect x="130" y="264" width="56" height="26" rx="6" fill="#C6EAD9" stroke="#4FA98B"/><text x="158" y="281" fill="#1F5C49">The</text>
+    <rect x="194" y="264" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="222" y="281" fill="#9E3528">?</text>
+    <rect x="258" y="264" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="286" y="281" fill="#9E3528">?</text>
+    <rect x="322" y="264" width="56" height="26" rx="6" fill="#C6EAD9" stroke="#4FA98B"/><text x="350" y="281" fill="#1F5C49">a</text>
+    <rect x="386" y="264" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="414" y="281" fill="#9E3528">?</text>
+    <rect x="450" y="264" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="478" y="281" fill="#9E3528">?</text>
+
+    <!-- Pass 3 -->
+    <text x="78" y="318" font-size="11" text-anchor="start" fill="#6B7280">Pass 3</text>
+    <rect x="130" y="304" width="56" height="26" rx="6" fill="#C6EAD9" stroke="#4FA98B"/><text x="158" y="321" fill="#1F5C49">The</text>
+    <rect x="194" y="304" width="56" height="26" rx="6" fill="#C6EAD9" stroke="#4FA98B"/><text x="222" y="321" fill="#1F5C49">model</text>
+    <rect x="258" y="304" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="286" y="321" fill="#9E3528">?</text>
+    <rect x="322" y="304" width="56" height="26" rx="6" fill="#C6EAD9" stroke="#4FA98B"/><text x="350" y="321" fill="#1F5C49">a</text>
+    <rect x="386" y="304" width="56" height="26" rx="6" fill="#C6EAD9" stroke="#4FA98B"/><text x="414" y="321" fill="#1F5C49">new</text>
+    <rect x="450" y="304" width="56" height="26" rx="6" fill="#F5B7AF" stroke="#C75B49"/><text x="478" y="321" fill="#9E3528">?</text>
+
+    <!-- Pass 4 -->
+    <text x="78" y="358" font-size="11" text-anchor="start" fill="#6B7280">Pass 4</text>
+    <rect x="130" y="344" width="56" height="26" rx="6" fill="#A6E1CB" stroke="#3E9E7B"/><text x="158" y="361" fill="#14503D">The</text>
+    <rect x="194" y="344" width="56" height="26" rx="6" fill="#A6E1CB" stroke="#3E9E7B"/><text x="222" y="361" fill="#14503D">model</text>
+    <rect x="258" y="344" width="56" height="26" rx="6" fill="#A6E1CB" stroke="#3E9E7B"/><text x="286" y="361" fill="#14503D">picks</text>
+    <rect x="322" y="344" width="56" height="26" rx="6" fill="#A6E1CB" stroke="#3E9E7B"/><text x="350" y="361" fill="#14503D">a</text>
+    <rect x="386" y="344" width="56" height="26" rx="6" fill="#A6E1CB" stroke="#3E9E7B"/><text x="414" y="361" fill="#14503D">new</text>
+    <rect x="450" y="344" width="56" height="26" rx="6" fill="#A6E1CB" stroke="#3E9E7B"/><text x="478" y="361" fill="#14503D">word</text>
+  </g>
+
+  <!-- denoise arrow on the right -->
+  <path d="M540,232 L540,362" fill="none" stroke="#4FA98B" stroke-width="1.6" marker-end="url(#arrTeal)"/>
+  <text x="552" y="288" font-size="11.5" fill="#3E9E7B" font-weight="700">denoise</text>
+  <text x="552" y="304" font-size="11" fill="#6B7280">1 pass = 1 forward</text>
+  <text x="552" y="318" font-size="11" fill="#6B7280">pass over ALL 256</text>
+  <text x="552" y="332" font-size="11" fill="#6B7280">positions (N ≪ 256)</text>
+
+  <text x="32" y="398" font-size="11.5" fill="#6B7280">The canvas fills in parallel over a few passes. Blocks are then committed left → right (causal):</text>
+  <text x="32" y="414" font-size="11.5" fill="#6B7280">diffusion <tspan font-weight="700" fill="#374151">within</tspan> a block, autoregression <tspan font-weight="700" fill="#374151">across</tspan> blocks.</text>
+
+  <!-- legend -->
+  <line x1="32" y1="438" x2="908" y2="438" stroke="#EDEFF2" stroke-width="1"/>
+  <rect x="32"  y="458" width="14" height="14" rx="3" fill="#F5B7AF" stroke="#C75B49"/>
+  <text x="54"  y="470" font-size="11.5" fill="#4B5563">noise / random token</text>
+  <rect x="222" y="458" width="14" height="14" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/>
+  <text x="244" y="470" font-size="11.5" fill="#4B5563">accepted token</text>
+  <rect x="392" y="458" width="14" height="14" rx="3" fill="#EEF0F3" stroke="#B6BEC8"/>
+  <text x="414" y="470" font-size="11.5" fill="#4B5563">prompt / committed context</text>
+
+  <text x="32" y="504" font-size="10.5" font-style="italic" fill="#9CA3AF">Grounded in gemma/diffusion/_sampler.py — canvas_length=256, get_initial_sample (random tokens), sample_next_canvas (denoising while-loop).</text>
+  <text x="32" y="524" font-size="10.5" font-style="italic" fill="#9CA3AF">Token contents are illustrative; the point is the pattern, not these exact words.</text>
+</svg>

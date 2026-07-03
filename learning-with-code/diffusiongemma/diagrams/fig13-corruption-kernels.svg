@@ -1,0 +1,41 @@
+<svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Three ways to noise a token</title>
+  <desc>Uniform/multinomial diffusion replaces a token with a random real token (D3PM, used by DiffusionGemma). Absorbing diffusion replaces it with a blank MASK token (LLaDA, MDLM, BD3-LMs). Continuous diffusion adds Gaussian noise to the token's embedding (Diffusion-LM, ELF).</desc>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style>
+  <defs>
+    <marker id="a13" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker>
+    <filter id="sgsoft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="1.2" stdDeviation="2.4" flood-color="#1f2937" flood-opacity="0.09"/></filter>
+  </defs>
+  <rect x="4" y="4" width="912" height="292" rx="16" fill="#FFFFFF" stroke="#ECEEF1" stroke-width="1.5"/>
+  <text x="32" y="40" font-size="19" font-weight="700" fill="#111827">Three ways to "<tspan fill="#C75B49">noise</tspan>" a token</text>
+  <text x="32" y="60" font-size="12" fill="#6B7280">the corruption kernel is a design choice — and DiffusionGemma's is the uncommon one</text>
+
+  <g text-anchor="middle">
+    <!-- Panel 1: uniform -->
+    <rect x="36" y="80" width="264" height="186" rx="12" fill="#FBFCFD" stroke="#9FD3C2" stroke-width="1.5" filter="url(#sgsoft)"/>
+    <text x="168" y="106" font-size="13" font-weight="700" fill="#2F7D67">Uniform / multinomial</text>
+    <rect x="80" y="130" width="50" height="32" rx="7" fill="#A6E1CB" stroke="#3E9E7B"/><text x="105" y="151" font-size="12" fill="#14503D">cat</text>
+    <path d="M136,146 L196,146" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#a13)"/>
+    <rect x="200" y="130" width="50" height="32" rx="7" fill="#F5B7AF" stroke="#C75B49"/><text x="225" y="151" font-size="12" fill="#9E3528">qux</text>
+    <text x="168" y="190" font-size="11.5" fill="#4B5563">→ a random <tspan font-weight="600">real</tspan> token</text>
+    <text x="168" y="234" font-size="11" font-weight="700" fill="#3E9E7B">D3PM  ·  ← DiffusionGemma</text>
+
+    <!-- Panel 2: absorbing -->
+    <rect x="328" y="80" width="264" height="186" rx="12" fill="#FBFCFD" stroke="#E7EBF0" filter="url(#sgsoft)"/>
+    <text x="460" y="106" font-size="13" font-weight="700" fill="#374151">Absorbing ( [MASK] )</text>
+    <rect x="372" y="130" width="50" height="32" rx="7" fill="#A6E1CB" stroke="#3E9E7B"/><text x="397" y="151" font-size="12" fill="#14503D">cat</text>
+    <path d="M428,146 L488,146" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#a13)"/>
+    <rect x="492" y="130" width="58" height="32" rx="7" fill="#EEF0F3" stroke="#B6BEC8" stroke-dasharray="4 3"/><text x="521" y="151" font-size="11" fill="#6B7280">[MASK]</text>
+    <text x="460" y="190" font-size="11.5" fill="#4B5563">→ a <tspan font-weight="600">blank</tspan></text>
+    <text x="460" y="234" font-size="11" fill="#9CA3AF">LLaDA · MDLM · BD3-LMs</text>
+
+    <!-- Panel 3: continuous -->
+    <rect x="620" y="80" width="264" height="186" rx="12" fill="#FBFCFD" stroke="#E7EBF0" filter="url(#sgsoft)"/>
+    <text x="752" y="106" font-size="13" font-weight="700" fill="#56409A">Continuous (Gaussian)</text>
+    <g fill="#A6E1CB" stroke="#3E9E7B"><rect x="664" y="134" width="13" height="24" rx="3"/><rect x="679" y="134" width="13" height="24" rx="3"/><rect x="694" y="134" width="13" height="24" rx="3"/></g>
+    <path d="M714,146 L758,146" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#a13)"/>
+    <g fill="#E7D6FA" stroke="#9E62D6"><rect x="766" y="130" width="13" height="24" rx="3"/><rect x="781" y="138" width="13" height="24" rx="3"/><rect x="796" y="132" width="13" height="24" rx="3"/></g>
+    <text x="752" y="190" font-size="11.5" fill="#4B5563">→ noise the <tspan font-weight="600">embedding</tspan></text>
+    <text x="752" y="234" font-size="11" fill="#9CA3AF">Diffusion-LM · ELF</text>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style><defs><filter id='sgsoft' x='-30%' y='-30%' width='160%' height='170%'><feDropShadow dx='0' dy='1.2' stdDeviation='2.4' flood-color='#1f2937' flood-opacity='0.09'/></filter></defs>
+  <title>Multinomial diffusion uses random tokens, not [MASK]</title>
+  <desc>The canvas starts as uniformly random tokens (noise proportion 1.0) and is denoised to clean tokens (noise proportion 0.0) along a linear schedule. Noise means replacing a token with a random real token, not blanking it to a mask token.</desc>
+  <defs>
+    <marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4FA98B"/></marker>
+  </defs>
+
+  <rect x="4" y="4" width="892" height="422" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="40" font-size="19" font-weight="700" fill="#111827">Multinomial diffusion: corrupt with <tspan fill="#C75B49">random tokens</tspan> — not <tspan fill="#9CA3AF">[MASK]</tspan></text>
+
+  <text x="32" y="72" font-size="12" fill="#6B7280">reverse process (denoise)</text>
+  <path d="M225,68 L760,68" fill="none" stroke="#4FA98B" stroke-width="1.6" marker-end="url(#a5)"/>
+
+  <!-- 5 canvas states -->
+  <g>
+    <!-- g1 np=1.0 -->
+    <g fill="#F5B7AF" stroke="#C75B49">
+      <rect x="40" y="92" width="20" height="20" rx="3"/><rect x="63" y="92" width="20" height="20" rx="3"/><rect x="86" y="92" width="20" height="20" rx="3"/>
+      <rect x="40" y="115" width="20" height="20" rx="3"/><rect x="63" y="115" width="20" height="20" rx="3"/><rect x="86" y="115" width="20" height="20" rx="3"/>
+    </g>
+    <text x="73" y="152" font-size="11" text-anchor="middle" fill="#6B7280">1.00</text>
+
+    <!-- g2 -->
+    <g><rect x="210" y="92" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><rect x="233" y="92" width="20" height="20" rx="3" fill="#F5B7AF" stroke="#C75B49"/><rect x="256" y="92" width="20" height="20" rx="3" fill="#F5B7AF" stroke="#C75B49"/>
+       <rect x="210" y="115" width="20" height="20" rx="3" fill="#F5B7AF" stroke="#C75B49"/><rect x="233" y="115" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><rect x="256" y="115" width="20" height="20" rx="3" fill="#F5B7AF" stroke="#C75B49"/></g>
+    <text x="243" y="152" font-size="11" text-anchor="middle" fill="#6B7280">0.75</text>
+
+    <!-- g3 -->
+    <g><rect x="380" y="92" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><rect x="403" y="92" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><rect x="426" y="92" width="20" height="20" rx="3" fill="#F5B7AF" stroke="#C75B49"/>
+       <rect x="380" y="115" width="20" height="20" rx="3" fill="#F5B7AF" stroke="#C75B49"/><rect x="403" y="115" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><rect x="426" y="115" width="20" height="20" rx="3" fill="#F5B7AF" stroke="#C75B49"/></g>
+    <text x="413" y="152" font-size="11" text-anchor="middle" fill="#6B7280">0.50</text>
+
+    <!-- g4 -->
+    <g><rect x="550" y="92" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><rect x="573" y="92" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><rect x="596" y="92" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/>
+       <rect x="550" y="115" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><rect x="573" y="115" width="20" height="20" rx="3" fill="#F5B7AF" stroke="#C75B49"/><rect x="596" y="115" width="20" height="20" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/></g>
+    <text x="583" y="152" font-size="11" text-anchor="middle" fill="#6B7280">0.25</text>
+
+    <!-- g5 -->
+    <g fill="#A6E1CB" stroke="#3E9E7B">
+      <rect x="720" y="92" width="20" height="20" rx="3"/><rect x="743" y="92" width="20" height="20" rx="3"/><rect x="766" y="92" width="20" height="20" rx="3"/>
+      <rect x="720" y="115" width="20" height="20" rx="3"/><rect x="743" y="115" width="20" height="20" rx="3"/><rect x="766" y="115" width="20" height="20" rx="3"/>
+    </g>
+    <text x="753" y="152" font-size="11" text-anchor="middle" fill="#6B7280">0.00</text>
+  </g>
+  <text x="32" y="180" font-size="11.5" fill="#9CA3AF">noise_proportion (linear schedule, 1.0 → 0.0 over the denoising steps)</text>
+  <text x="824" y="105" font-size="11" fill="#6B7280">← forward</text>
+  <text x="824" y="120" font-size="11" fill="#6B7280">(corrupt)</text>
+
+  <!-- callout -->
+  <line x1="32" y1="206" x2="868" y2="206" stroke="#EDEFF2"/>
+  <rect x="32" y="226" width="500" height="120" rx="10" fill="#FBFCFD" stroke="#E5E7EB" filter="url(#sgsoft)"/>
+  <text x="52" y="252" font-size="13" font-weight="700" fill="#374151">The correction most summaries miss</text>
+  <text x="52" y="276" font-size="11.8" fill="#4B5563">A "noisy" position holds a <tspan font-weight="700" fill="#9E3528">random REAL token</tspan> (uniform over the</text>
+  <text x="52" y="294" font-size="11.8" fill="#4B5563">262,144-word vocab), so denoising = overwriting wrong tokens.</text>
+  <text x="52" y="320" font-size="11.8" fill="#4B5563">The <tspan font-weight="700">[MASK] / absorbing</tspan> approach (LLaDA) blanks the token</text>
+  <text x="52" y="338" font-size="11.8" fill="#4B5563">instead — DiffusionGemma's reference sampler does <tspan font-weight="700">not</tspan> do that.</text>
+
+  <rect x="560" y="226" width="308" height="120" rx="10" fill="#FBFCFD" stroke="#E5E7EB" filter="url(#sgsoft)"/>
+  <text x="580" y="252" font-size="12.5" font-weight="700" fill="#374151">In code</text>
+  <text x="580" y="276" font-size="11" font-family="ui-monospace, monospace" fill="#5B6470">get_initial_sample:</text>
+  <text x="580" y="293" font-size="11" font-family="ui-monospace, monospace" fill="#5B6470">  random tokens in [0, vocab)</text>
+  <text x="580" y="316" font-size="11" font-family="ui-monospace, monospace" fill="#5B6470">add_noise_to_tokens:</text>
+  <text x="580" y="333" font-size="11" font-family="ui-monospace, monospace" fill="#5B6470">  where(mask, random, canvas)</text>
+
+  <rect x="32" y="368" width="14" height="14" rx="3" fill="#F5B7AF" stroke="#C75B49"/><text x="54" y="380" font-size="11.5" fill="#4B5563">noise (random token)</text>
+  <rect x="220" y="368" width="14" height="14" rx="3" fill="#A6E1CB" stroke="#3E9E7B"/><text x="242" y="380" font-size="11.5" fill="#4B5563">denoised (clean token)</text>
+  <text x="32" y="412" font-size="10" font-style="italic" fill="#C0C5CD">gemma/diffusion/_sampler.py · DiffusionProcess, LinearSchedule</text>
+</svg>

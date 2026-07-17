@@ -1,0 +1,75 @@
+<svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>From S4 to Mamba-2: what each step changed</title>
+  <desc>Three panels: S4 with fixed dynamics, Mamba-1 making step size and read/write vectors input-dependent, Mamba-2 collapsing the decay to one scalar per head which enables chunked matmul training. Edge labels state what changed.</desc>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style>
+  <defs>
+    <filter id="sgsoft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="1.2" stdDeviation="2.4" flood-color="#1f2937" flood-opacity="0.09"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker>
+  </defs>
+
+  <rect x="4" y="4" width="952" height="492" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="42" font-size="19" font-weight="700" fill="#111827">S4 → Mamba → <tspan fill="#3E9E7B">Mamba-2</tspan> — each step trades structure for speed</text>
+  <text x="32" y="63" font-size="12" fill="#6B7280">the recurrence h ← decay·h + write·x never changes; what changes is who gets to choose the decay and the write, and how cheaply it trains</text>
+
+  <!-- S4 panel -->
+  <rect x="32" y="92" width="280" height="270" rx="12" fill="#FBFCFD" stroke="#C9D1DB" stroke-width="1.5" filter="url(#sgsoft)"/>
+  <text x="172" y="120" font-size="13.5" font-weight="700" text-anchor="middle" fill="#4B5563">S4 · 2021</text>
+  <text x="172" y="138" font-size="10.5" text-anchor="middle" fill="#6B7280">structured state space</text>
+  <rect x="56" y="154" width="232" height="58" rx="9" fill="#EEF0F3" stroke="#B6BEC8"/>
+  <text x="172" y="178" font-size="11.5" text-anchor="middle" fill="#374151">A, B, C fixed after training</text>
+  <text x="172" y="196" font-size="10.5" text-anchor="middle" fill="#6B7280">the same dynamics for every token</text>
+  <g font-size="10.5" fill="#374151">
+    <text x="56" y="236">· A: structured matrix (HiPPO init)</text>
+    <text x="56" y="256">· great at long, uniform signals</text>
+    <text x="56" y="276">· can't skip or emphasize a token —</text>
+    <text x="60" y="292">  time-invariant by construction</text>
+  </g>
+  <text x="172" y="336" font-size="10" text-anchor="middle" fill="#9CA3AF">a very good linear filter</text>
+
+  <!-- arrow 1 -->
+  <path d="M312,220 L348,220" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Mamba-1 panel -->
+  <rect x="352" y="92" width="280" height="270" rx="12" fill="#FBFCFD" stroke="#8ECCB6" stroke-width="1.5" filter="url(#sgsoft)"/>
+  <text x="492" y="120" font-size="13.5" font-weight="700" text-anchor="middle" fill="#14503D">Mamba · 2023</text>
+  <text x="492" y="138" font-size="10.5" text-anchor="middle" fill="#22624F">selective state space</text>
+  <rect x="376" y="154" width="232" height="58" rx="9" fill="#E4F5EE" stroke="#8ECCB6"/>
+  <text x="492" y="178" font-size="11.5" text-anchor="middle" fill="#14503D">Δt, B, C computed from the token</text>
+  <text x="492" y="196" font-size="10.5" text-anchor="middle" fill="#22624F">write hard, write soft, or ignore — per token</text>
+  <g font-size="10.5" fill="#374151">
+    <text x="376" y="236">· A: still a diagonal matrix,</text>
+    <text x="380" y="252">  (d_inner × d_state) parameters</text>
+    <text x="376" y="272">· recurrent scan only — custom</text>
+    <text x="380" y="288">  CUDA kernel, no matmul form</text>
+  </g>
+  <text x="492" y="336" font-size="10" text-anchor="middle" fill="#9CA3AF">selective, but trains like an RNN</text>
+
+  <!-- arrow 2 -->
+  <path d="M632,220 L668,220" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Mamba-2 panel -->
+  <rect x="672" y="92" width="256" height="270" rx="12" fill="#E4F5EE" stroke="#4FA98B" stroke-width="1.8" filter="url(#sgsoft)"/>
+  <text x="800" y="120" font-size="13.5" font-weight="700" text-anchor="middle" fill="#14503D">Mamba-2 · 2024</text>
+  <text x="800" y="138" font-size="10.5" text-anchor="middle" fill="#22624F">state-space duality (SSD)</text>
+  <rect x="692" y="154" width="216" height="58" rx="9" fill="#A6E1CB" stroke="#3E9E7B"/>
+  <text x="800" y="178" font-size="11.5" text-anchor="middle" fill="#14503D" font-weight="600">a = one scalar per head</text>
+  <text x="800" y="196" font-size="10.5" text-anchor="middle" fill="#14503D">the whole "A matrix", 256 numbers</text>
+  <g font-size="10.5" fill="#374151">
+    <text x="696" y="236">· same recurrence = a masked</text>
+    <text x="700" y="252">  matmul → trains like attention</text>
+    <text x="696" y="272">· heads + shared B, C groups,</text>
+    <text x="700" y="288">  borrowed straight from GQA</text>
+  </g>
+  <text x="800" y="336" font-size="10" text-anchor="middle" fill="#3E9E7B" font-weight="600">what Nemotron 3 ships, 48 blocks</text>
+
+  <rect x="296" y="190" width="68" height="16" rx="4" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.8"/>
+  <text x="330" y="202" font-size="9" text-anchor="middle" fill="#6B7280">Δ,B,C ← token</text>
+  <rect x="612" y="190" width="76" height="16" rx="4" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.8"/>
+  <text x="650" y="202" font-size="9" text-anchor="middle" fill="#6B7280">A → scalar/head</text>
+  <!-- bottom strip: the invariant -->
+  <rect x="32" y="384" width="896" height="72" rx="12" fill="#FBFCFD" stroke="#C9D1DB" stroke-width="1.3" filter="url(#sgsoft)"/>
+  <text x="480" y="412" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111827">the invariant across all three:   h ← decay · h  +  write · x,   y = read · h</text>
+  <text x="480" y="436" font-size="11" text-anchor="middle" fill="#6B7280">S4 fixed all three roles · Mamba let the token choose them · Mamba-2 made the choice cheap enough to train at 550B</text>
+
+  <text x="928" y="484" font-size="10" font-style="italic" text-anchor="end" fill="#C0C5CD">code: state-spaces/mamba · mamba_simple.py vs transformers · modeling_nemotron_h.py</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Inside the Mamba-2 mixer</title>
+  <desc>Dataflow of one Mamba-2 mixer: a single input projection splits into gate, conv stream and step sizes; a depthwise conv mixes locally; the SSM recurrence updates a fixed-size state; a gated RMSNorm and output projection close the block.</desc>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style>
+  <defs>
+    <filter id="sgsoft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="1.2" stdDeviation="2.4" flood-color="#1f2937" flood-opacity="0.09"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker>
+  </defs>
+
+  <rect x="4" y="4" width="952" height="532" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="42" font-size="19" font-weight="700" fill="#111827">Inside the <tspan fill="#3E9E7B">Mamba-2 mixer</tspan> — one token in, one state update, one token out</text>
+  <text x="32" y="63" font-size="12" fill="#6B7280">the decode step: everything the layer needs comes out of a single in_proj; the only memory is a 4-wide conv window and a 64×128 state per head</text>
+
+  <!-- input -->
+  <rect x="60" y="92" width="130" height="34" rx="9" fill="#EEF0F3" stroke="#B6BEC8" filter="url(#sgsoft)"/>
+  <text x="125" y="114" font-size="12" text-anchor="middle" fill="#4B5563">token · 8192</text>
+  <path d="M190,109 L232,109" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <!-- in_proj -->
+  <rect x="236" y="92" width="120" height="34" rx="9" fill="#FBFCFD" stroke="#C9D1DB" filter="url(#sgsoft)"/>
+  <text x="296" y="114" font-size="12" text-anchor="middle" fill="#374151">in_proj</text>
+
+  <!-- three streams -->
+  <path d="M356,109 C 420,109 440,140 452,168" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M356,109 C 450,109 520,109 560,109 L 700,109" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M356,109 C 420,109 430,260 448,296" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- gate stream (top-right) -->
+  <rect x="704" y="92" width="180" height="34" rx="9" fill="#FBFCFD" stroke="#C9D1DB" filter="url(#sgsoft)"/>
+  <text x="794" y="114" font-size="12" text-anchor="middle" fill="#374151">gate · 16384 <tspan fill="#9CA3AF">(waits)</tspan></text>
+
+  <!-- conv stream -->
+  <rect x="456" y="152" width="200" height="34" rx="9" fill="#FBFCFD" stroke="#C9D1DB" filter="url(#sgsoft)"/>
+  <text x="556" y="174" font-size="12" text-anchor="middle" fill="#374151">x ‖ B ‖ C · conv stream</text>
+  <path d="M556,186 L556,214" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <rect x="436" y="218" width="240" height="36" rx="9" fill="#FBFCFD" stroke="#C9D1DB" filter="url(#sgsoft)"/>
+  <text x="556" y="241" font-size="12" text-anchor="middle" fill="#374151">depthwise conv1d, k=4 · SiLU</text>
+  <text x="690" y="241" font-size="10" fill="#9CA3AF">← its cache: last 4 columns</text>
+  <path d="M556,254 L556,282" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="570" y="274" font-size="10.5" fill="#6B7280">split → x (16384) · B, C (8 groups × 128)</text>
+
+  <!-- dt stream -->
+  <rect x="404" y="300" width="148" height="34" rx="9" fill="#FBFCFD" stroke="#C9D1DB" filter="url(#sgsoft)"/>
+  <text x="478" y="322" font-size="12" text-anchor="middle" fill="#374151">Δt = softplus(δ+b)</text>
+
+  <!-- SSM core -->
+  <rect x="380" y="352" width="360" height="98" rx="12" fill="#E4F5EE" stroke="#4FA98B" stroke-width="1.6" filter="url(#sgsoft)"/>
+  <text x="560" y="378" font-size="13.5" font-weight="700" text-anchor="middle" fill="#14503D">state update — the whole trick</text>
+  <text x="560" y="404" font-size="14" text-anchor="middle" fill="#14503D">h ← h · e^(Δt·a)  +  (Δt·x) Bᵀ</text>
+  <text x="560" y="428" font-size="11" text-anchor="middle" fill="#22624F">decay the summary, write the new token · readout y = h·C + D·x</text>
+  <path d="M556,338 L556,348" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <!-- state box -->
+  <rect x="764" y="352" width="164" height="98" rx="12" fill="#FBFCFD" stroke="#8ECCB6" stroke-width="1.5" filter="url(#sgsoft)"/>
+  <text x="846" y="376" font-size="12" font-weight="700" text-anchor="middle" fill="#14503D">the state</text>
+  <text x="846" y="396" font-size="11" text-anchor="middle" fill="#374151">256 heads × (64 × 128)</text>
+  <text x="846" y="413" font-size="11" text-anchor="middle" fill="#374151">fp32 · 8 MiB / layer</text>
+  <text x="846" y="435" font-size="10.5" text-anchor="middle" fill="#3E9E7B" font-weight="600">never grows</text>
+  <path d="M740,384 L760,384" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <path d="M760,420 L740,420" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="750" y="374" font-size="9" text-anchor="middle" fill="#9CA3AF">read</text>
+  <text x="750" y="437" font-size="9" text-anchor="middle" fill="#9CA3AF">write</text>
+
+  <!-- output path -->
+  <path d="M560,450 L560,478" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <rect x="440" y="482" width="240" height="34" rx="9" fill="#FBFCFD" stroke="#C9D1DB" filter="url(#sgsoft)"/>
+  <text x="560" y="504" font-size="12" text-anchor="middle" fill="#374151">gated RMSNorm(y, gate) → out_proj</text>
+  <text x="794" y="144" font-size="10" fill="#9CA3AF" text-anchor="middle">skips the state entirely — returns below</text>
+  <text x="794" y="158" font-size="10" fill="#9CA3AF" text-anchor="middle">to modulate the output norm (z-branch)</text>
+  <path d="M382,499 L436,499" stroke="#C9B3E8" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text x="376" y="503" font-size="10" fill="#9CA3AF" text-anchor="end">gate ↴</text>
+  <path d="M684,499 L724,499" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <rect x="728" y="482" width="130" height="34" rx="9" fill="#EEF0F3" stroke="#B6BEC8" filter="url(#sgsoft)"/>
+  <text x="793" y="504" font-size="12" text-anchor="middle" fill="#4B5563">token · 8192</text>
+
+  <!-- annotations -->
+  <text x="60" y="176" font-size="10.5" fill="#6B7280">n_groups = 8: the 256 heads share</text>
+  <text x="60" y="191" font-size="10.5" fill="#6B7280">just 8 (B, C) pairs — GQA's trick,</text>
+  <text x="60" y="206" font-size="10.5" fill="#6B7280">applied to the SSM's write/read vectors</text>
+  <text x="60" y="320" font-size="10.5" fill="#6B7280">a = −e^(A_log): a learned</text>
+  <text x="60" y="335" font-size="10.5" fill="#6B7280">negative scalar per head —</text>
+  <text x="60" y="350" font-size="10.5" fill="#6B7280">that's the entire "A matrix"</text>
+
+  <text x="928" y="528" font-size="10" font-style="italic" text-anchor="end" fill="#C0C5CD">source: modeling_nemotron_h.py · NemotronHMamba2Mixer.torch_forward</text>
+</svg>

@@ -12,6 +12,7 @@ Notes are organized into series, one folder per series:
 
 ## Latest
 
+- **[Learning with Code: Nemotron 3](learning-with-code/nemotron3/nemotron3-deep-dive.md)** — NVIDIA's 550B-A55B flagship that keeps attention in only 12 of its 108 blocks. Mamba-2, latent-space experts, and the draft model riding in the checkpoint, traced through `huggingface/transformers` and `vllm`.
 - **[Learning with Code: DiffusionGemma](learning-with-code/diffusiongemma/diffusiongemma-deep-dive.md)** — a Gemma-4 MoE that writes by denoising whole 256-token blocks instead of going left-to-right. Every component traced to `google-deepmind/gemma`.
 
 Also on Substack: [*Agent Learning Notes*](https://hongyushen.substack.com) · Site: [drshy.xyz](https://www.drshy.xyz)

@@ -1,0 +1,66 @@
+<svg viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>GQA and the missing positional encoding</title>
+  <desc>Left: 64 query heads share 2 KV heads. Right: there is no RoPE — position information comes from the Mamba-2 recurrence below each attention block.</desc>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style>
+  <defs>
+    <filter id="sgsoft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="1.2" stdDeviation="2.4" flood-color="#1f2937" flood-opacity="0.09"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker>
+  </defs>
+
+  <rect x="4" y="4" width="952" height="412" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="42" font-size="19" font-weight="700" fill="#111827">The 12 anchors: <tspan fill="#9E62D6">64 queries, 2 keys</tspan> — and <tspan fill="#3E9E7B">nobody tells them where they are</tspan></text>
+  <text x="32" y="63" font-size="12" fill="#6B7280">grouped-query attention shrinks the cache 32×; dropping RoPE means there is nothing to re-scale when the context stretches to 1M</text>
+
+  <!-- left: GQA -->
+  <rect x="32" y="86" width="430" height="270" rx="12" fill="#FBFCFD" stroke="#C5A6EA" stroke-width="1.5" filter="url(#sgsoft)"/>
+  <text x="247" y="114" font-size="13.5" font-weight="700" text-anchor="middle" fill="#56409A">GQA — 64 : 2</text>
+
+  <!-- 64 query heads as 2 rows of 16 mini squares (representing 64 with ×) -->
+  <g>
+    <text x="247" y="140" font-size="11" text-anchor="middle" fill="#6B7280">64 query heads (d_head 128)</text>
+    <g fill="#E7D6FA" stroke="#9E62D6" stroke-width="0.8">
+      <rect x="87" y="150" width="18" height="18" rx="4"/><rect x="108" y="150" width="18" height="18" rx="4"/><rect x="129" y="150" width="18" height="18" rx="4"/><rect x="150" y="150" width="18" height="18" rx="4"/>
+      <rect x="171" y="150" width="18" height="18" rx="4"/><rect x="192" y="150" width="18" height="18" rx="4"/><rect x="213" y="150" width="18" height="18" rx="4"/><rect x="234" y="150" width="18" height="18" rx="4"/>
+      <rect x="255" y="150" width="18" height="18" rx="4"/><rect x="276" y="150" width="18" height="18" rx="4"/><rect x="297" y="150" width="18" height="18" rx="4"/><rect x="318" y="150" width="18" height="18" rx="4"/>
+      <rect x="339" y="150" width="18" height="18" rx="4"/><rect x="360" y="150" width="18" height="18" rx="4"/><rect x="381" y="150" width="18" height="18" rx="4"/><rect x="402" y="150" width="18" height="18" rx="4"/>
+      <rect x="87" y="171" width="18" height="18" rx="4"/><rect x="108" y="171" width="18" height="18" rx="4"/><rect x="129" y="171" width="18" height="18" rx="4"/><rect x="150" y="171" width="18" height="18" rx="4"/>
+      <rect x="171" y="171" width="18" height="18" rx="4"/><rect x="192" y="171" width="18" height="18" rx="4"/><rect x="213" y="171" width="18" height="18" rx="4"/><rect x="234" y="171" width="18" height="18" rx="4"/>
+      <rect x="255" y="171" width="18" height="18" rx="4"/><rect x="276" y="171" width="18" height="18" rx="4"/><rect x="297" y="171" width="18" height="18" rx="4"/><rect x="318" y="171" width="18" height="18" rx="4"/>
+      <rect x="339" y="171" width="18" height="18" rx="4"/><rect x="360" y="171" width="18" height="18" rx="4"/><rect x="381" y="171" width="18" height="18" rx="4"/><rect x="402" y="171" width="18" height="18" rx="4"/>
+    </g>
+    <text x="247" y="206" font-size="9.5" text-anchor="middle" fill="#9CA3AF">(32 shown · ×2)</text>
+  </g>
+
+  <path d="M180,214 C 200,232 220,240 235,246" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M314,214 C 294,232 274,240 259,246" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 2 KV heads -->
+  <g text-anchor="middle">
+    <rect x="187" y="250" width="56 " height="40" rx="8" fill="#A6E1CB" stroke="#3E9E7B" filter="url(#sgsoft)"/>
+    <rect x="251" y="250" width="56" height="40" rx="8" fill="#A6E1CB" stroke="#3E9E7B" filter="url(#sgsoft)"/>
+    <text x="247" y="309" font-size="11" fill="#374151">2 KV heads — the only thing that gets cached</text>
+  </g>
+  <text x="247" y="336" font-size="11.5" text-anchor="middle" fill="#14503D" font-weight="600">per token cached: 12 layers × 2 heads × 2 (K,V) × 128 = 6,144 values</text>
+
+  <!-- right: NoPE -->
+  <rect x="498" y="86" width="430" height="270" rx="12" fill="#FBFCFD" stroke="#C9D1DB" stroke-width="1.5" filter="url(#sgsoft)"/>
+  <text x="713" y="114" font-size="13.5" font-weight="700" text-anchor="middle" fill="#111827">where did RoPE go?</text>
+
+  <rect x="538" y="136" width="350" height="52" rx="9" fill="#FFF7F5" stroke="#E4B7AE" stroke-width="1.2"/>
+  <text x="713" y="157" font-size="11.5" text-anchor="middle" fill="#9E3528" font-family="ui-monospace,monospace">apply_rotary_pos_emb(q, k, cos, sin)</text>
+  <text x="713" y="176" font-size="10.5" text-anchor="middle" fill="#C75B49">defined in the file — never called by the forward</text>
+  <line x1="556" y1="162" x2="871" y2="150" stroke="#C75B49" stroke-width="1.6"/>
+
+  <path d="M713,196 L713,216" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <rect x="538" y="220" width="350" height="100" rx="9" fill="#E4F5EE" stroke="#8ECCB6" stroke-width="1.2" filter="url(#sgsoft)"/>
+  <text x="713" y="244" font-size="12" font-weight="700" text-anchor="middle" fill="#14503D">position comes from below</text>
+  <text x="713" y="266" font-size="11" text-anchor="middle" fill="#22624F">every attention block sits above ≥4 Mamba-2 blocks;</text>
+  <text x="713" y="283" font-size="11" text-anchor="middle" fill="#22624F">a causal recurrence encodes "how long ago"</text>
+  <text x="713" y="300" font-size="11" text-anchor="middle" fill="#22624F">in how much a memory has decayed</text>
+
+  <text x="713" y="342" font-size="11.5" text-anchor="middle" fill="#374151">no frequencies to stretch → nothing breaks at 1M tokens</text>
+
+  <text x="32" y="384" font-size="12" fill="#374151">verified twice: the HF forward has no position math, and vLLM's independent implementation contains no rotary code at all.</text>
+  <text x="928" y="404" font-size="10" font-style="italic" text-anchor="end" fill="#C0C5CD">source: modeling_nemotron_h.py · NemotronHAttention — and vllm · models/nemotron_h.py</text>
+</svg>

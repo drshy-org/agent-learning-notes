@@ -1,0 +1,93 @@
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>SSD: one computation, two readings</title>
+  <desc>The T-by-T masked matrix y equals L composed with C B-transpose times x, split into chunks: diagonal blocks are computed directly as masked matmuls (attention mode), everything below them flows through one carried state per chunk boundary (recurrence mode).</desc>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style>
+  <defs>
+    <filter id="sgsoft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="1.2" stdDeviation="2.4" flood-color="#1f2937" flood-opacity="0.09"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker>
+    <marker id="arrowT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9E7B"/></marker>
+  </defs>
+
+  <rect x="4" y="4" width="952" height="552" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="42" font-size="19" font-weight="700" fill="#111827">SSD — <tspan fill="#3E9E7B">one matrix, two ways to compute it</tspan></text>
+  <text x="32" y="63" font-size="12" fill="#6B7280">y = (L ∘ CBᵀ)x is a T×T lower-triangular matrix; chunking decides which entries are matmul'd and which flow through a state</text>
+
+  <!-- the T x T matrix, 3 chunks of 4 cells each = 12x12 grid, cell 26px -->
+  <!-- grid origin -->
+  <g>
+    <text x="240" y="102" font-size="11" text-anchor="middle" fill="#6B7280">keys j → (B side)</text>
+    <text x="80" y="290" font-size="11" text-anchor="middle" fill="#6B7280" transform="rotate(-90 80 290)">queries i → (C side)</text>
+
+    <!-- chunk shading: off-diagonal (below diagonal blocks) = lavender -->
+    <rect x="104" y="252" width="104" height="104" fill="#F3EBFC" stroke="none"/>
+    <rect x="104" y="356" width="104" height="104" fill="#F3EBFC" stroke="none"/>
+    <rect x="208" y="356" width="104" height="104" fill="#F3EBFC" stroke="none"/>
+    <!-- diagonal chunk blocks = teal -->
+    <rect x="104" y="148" width="104" height="104" fill="#A6E1CB" stroke="none" opacity="0.85"/>
+    <rect x="208" y="252" width="104" height="104" fill="#A6E1CB" stroke="none" opacity="0.85"/>
+    <rect x="312" y="356" width="104" height="104" fill="#A6E1CB" stroke="none" opacity="0.85"/>
+    <!-- upper triangle mask (causal zero) drawn as white cover with diagonal split inside diagonal blocks -->
+    <polygon points="104,148 416,148 416,460 " fill="#FFFFFF" opacity="0"/>
+    <polygon points="104,148 416,148 416,460" fill="#FFFFFF"/>
+    <polygon points="104,148 208,148 208,252 104,252" fill="none"/>
+    <!-- redraw diag blocks' lower triangles (causal inside chunk) -->
+    <polygon points="104,148 104,252 208,252" fill="#A6E1CB" opacity="0.85"/>
+    <polygon points="208,252 208,356 312,356" fill="#A6E1CB" opacity="0.85"/>
+    <polygon points="312,356 312,460 416,460" fill="#A6E1CB" opacity="0.85"/>
+
+    <!-- grid lines -->
+    <g stroke="#C9D1DB" stroke-width="0.7">
+      <line x1="104" y1="148" x2="104" y2="460"/><line x1="130" y1="148" x2="130" y2="460"/><line x1="156" y1="148" x2="156" y2="460"/><line x1="182" y1="148" x2="182" y2="460"/>
+      <line x1="208" y1="148" x2="208" y2="460"/><line x1="234" y1="148" x2="234" y2="460"/><line x1="260" y1="148" x2="260" y2="460"/><line x1="286" y1="148" x2="286" y2="460"/>
+      <line x1="312" y1="148" x2="312" y2="460"/><line x1="338" y1="148" x2="338" y2="460"/><line x1="364" y1="148" x2="364" y2="460"/><line x1="390" y1="148" x2="390" y2="460"/><line x1="416" y1="148" x2="416" y2="460"/>
+      <line x1="104" y1="148" x2="416" y2="148"/><line x1="104" y1="174" x2="416" y2="174"/><line x1="104" y1="200" x2="416" y2="200"/><line x1="104" y1="226" x2="416" y2="226"/>
+      <line x1="104" y1="252" x2="416" y2="252"/><line x1="104" y1="278" x2="416" y2="278"/><line x1="104" y1="304" x2="416" y2="304"/><line x1="104" y1="330" x2="416" y2="330"/>
+      <line x1="104" y1="356" x2="416" y2="356"/><line x1="104" y1="382" x2="416" y2="382"/><line x1="104" y1="408" x2="416" y2="408"/><line x1="104" y1="434" x2="416" y2="434"/><line x1="104" y1="460" x2="416" y2="460"/>
+    </g>
+    <!-- chunk borders -->
+    <g stroke="#4FA98B" stroke-width="2" fill="none">
+      <rect x="104" y="148" width="104" height="104"/>
+      <rect x="208" y="252" width="104" height="104"/>
+      <rect x="312" y="356" width="104" height="104"/>
+    </g>
+    <rect x="104" y="148" width="312" height="312" fill="none" stroke="#9CA3AF" stroke-width="1.2"/>
+
+    <!-- chunk labels -->
+    <text x="156" y="140" font-size="10.5" text-anchor="middle" fill="#22624F" font-weight="600">chunk 1</text>
+    <text x="260" y="140" font-size="10.5" text-anchor="middle" fill="#22624F" font-weight="600">chunk 2</text>
+    <text x="364" y="140" font-size="10.5" text-anchor="middle" fill="#22624F" font-weight="600">chunk 3</text>
+
+    <!-- state hand-off arrows along the diagonal -->
+    <path d="M198,262 C 186,290 196,296 214,300" stroke="#8A5BD6" stroke-width="1.8" fill="none" marker-end="url(#arrow)"/>
+    <text x="150" y="300" font-size="10" fill="#8A5BD6" font-weight="600">state h¹</text>
+    <path d="M302,366 C 290,394 300,400 318,404" stroke="#8A5BD6" stroke-width="1.8" fill="none" marker-end="url(#arrow)"/>
+    <text x="254" y="404" font-size="10" fill="#8A5BD6" font-weight="600">state h²</text>
+  </g>
+
+  <!-- right: legend / reading -->
+  <rect x="480" y="120" width="448" height="196" rx="12" fill="#FBFCFD" stroke="#C9D1DB" stroke-width="1.4" filter="url(#sgsoft)"/>
+  <text x="704" y="146" font-size="13" font-weight="700" text-anchor="middle" fill="#111827">how to read the matrix</text>
+  <g font-size="11.5" fill="#374151">
+    <rect x="500" y="160" width="22" height="16" rx="3.5" fill="#A6E1CB" opacity="0.85"/>
+    <text x="532" y="173">diagonal blocks — <tspan font-weight="600" fill="#14503D">attention mode</tspan>: the masked matmul</text>
+    <text x="532" y="190">M = L ∘ (CBᵀ), computed directly (code: `Y_diag`)</text>
+    <rect x="500" y="204" width="22" height="16" rx="3.5" fill="#F3EBFC"/>
+    <text x="532" y="217">below the blocks — <tspan font-weight="600" fill="#56409A">recurrence mode</tspan>: never materialized;</text>
+    <text x="532" y="234">each chunk's tokens compress into one state, decayed forward (`Y_off`)</text>
+    <text x="500" y="262">entry (i, j):  L<tspan font-size="9" baseline-shift="sub">ij</tspan> · C<tspan font-size="9" baseline-shift="sub">i</tspan>ᵀB<tspan font-size="9" baseline-shift="sub">j</tspan> — decay-product × key·query match</text>
+    <text x="500" y="284" fill="#6B7280" font-size="11">upper triangle is empty: causal, the future never writes back</text>
+  </g>
+
+  <!-- bottom-right: the dictionary -->
+  <rect x="480" y="336" width="448" height="124" rx="12" fill="#E4F5EE" stroke="#8ECCB6" stroke-width="1.4" filter="url(#sgsoft)"/>
+  <text x="704" y="362" font-size="13" font-weight="700" text-anchor="middle" fill="#14503D">the dictionary to attention</text>
+  <g font-size="11.5" fill="#22624F" text-anchor="middle">
+    <text x="704" y="388">B ≈ keys · C ≈ queries · x ≈ values</text>
+    <text x="704" y="408">softmax(QKᵀ) → decay mask L — no normalization, no growth</text>
+    <text x="704" y="436" font-size="10.5" fill="#6B7280">one shared L per head — the scalar-decay constraint is what makes this cheap</text>
+  </g>
+
+  <text x="32" y="505" font-size="11.5" fill="#374151">Train-time: the whole matrix, chunk by chunk, on tensor cores. Decode-time: only the last row — which is just the recurrence.</text>
+  <text x="32" y="524" font-size="11" fill="#6B7280">chunk size 128 in Ultra's config; 3 chunks of 4 shown</text>
+  <text x="928" y="544" font-size="10" font-style="italic" text-anchor="end" fill="#C0C5CD">code: modeling_nemotron_h.py · torch_forward (Y_diag + Y_off) · math: arXiv:2405.21060</text>
+</svg>

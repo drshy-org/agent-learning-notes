@@ -1,0 +1,90 @@
+<svg viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>The Nemotron hybrid family</title>
+  <desc>Lineage DAG: Mamba-2 and the Transformer merge into Nemotron-H, which becomes the Nemotron 3 family (Nano, Super, Ultra), with DeepSeek-V3 contributing the router and MTP recipes, and Labs branches Elastic and Puzzle deriving from Nano and Super.</desc>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style>
+  <defs>
+    <filter id="sgsoft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="1.2" stdDeviation="2.4" flood-color="#1f2937" flood-opacity="0.09"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker>
+    <marker id="arrowL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A5BD6"/></marker>
+  </defs>
+
+  <rect x="4" y="4" width="952" height="512" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="42" font-size="19" font-weight="700" fill="#111827">The family — <tspan fill="#3E9E7B">each edge labeled by the gap it closed</tspan></text>
+  <text x="32" y="63" font-size="12" fill="#6B7280">solid = direct lineage · dashed = borrowed recipe · one modeling file serves every teal box</text>
+
+  <!-- ancestors row -->
+  <rect x="60" y="92" width="180" height="52" rx="10" fill="#EEF0F3" stroke="#B6BEC8" filter="url(#sgsoft)"/>
+  <text x="150" y="114" font-size="12" font-weight="700" text-anchor="middle" fill="#4B5563">Mamba-2 (SSD)</text>
+  <text x="150" y="132" font-size="10" text-anchor="middle" fill="#6B7280">2024 · trains like attention</text>
+
+  <rect x="290" y="92" width="180" height="52" rx="10" fill="#EEF0F3" stroke="#B6BEC8" filter="url(#sgsoft)"/>
+  <text x="380" y="114" font-size="12" font-weight="700" text-anchor="middle" fill="#4B5563">Transformer + MoE</text>
+  <text x="380" y="132" font-size="10" text-anchor="middle" fill="#6B7280">the incumbent stack</text>
+
+  <rect x="700" y="92" width="200" height="52" rx="10" fill="#F3EBFC" stroke="#C5A6EA" filter="url(#sgsoft)"/>
+  <text x="800" y="114" font-size="12" font-weight="700" text-anchor="middle" fill="#56409A">DeepSeek-V3</text>
+  <text x="800" y="132" font-size="10" text-anchor="middle" fill="#6B7280">sigmoid router · bias balance · MTP</text>
+
+  <!-- merge into Nemotron-H -->
+  <path d="M150,144 C 150,190 210,205 255,215" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M380,144 C 380,185 330,203 300,213" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="150" y="185" font-size="9.5" fill="#9CA3AF">replace ~92% of attention</text>
+
+  <rect x="140" y="218" width="280" height="56" rx="10" fill="#E4F5EE" stroke="#8ECCB6" stroke-width="1.4" filter="url(#sgsoft)"/>
+  <text x="280" y="240" font-size="12.5" font-weight="700" text-anchor="middle" fill="#14503D">Nemotron-H · Apr 2025</text>
+  <text x="280" y="258" font-size="10" text-anchor="middle" fill="#22624F">the hybrid recipe: sparse attention anchors, no positions</text>
+
+  <!-- to Nemotron 3 -->
+  <path d="M280,274 L280,314" stroke="#9CA3AF" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="292" y="298" font-size="9.5" fill="#9CA3AF">the FFN goes MoE, at every slot</text>
+  <path d="M800,144 C 800,220 640,290 520,330 " stroke="#8A5BD6" stroke-width="1.3" stroke-dasharray="5 4" fill="none" marker-end="url(#arrowL)"/>
+  <text x="712" y="240" font-size="9.5" fill="#8A5BD6">router + MTP recipe, subclassed</text>
+
+  <!-- Nemotron 3 container -->
+  <rect x="60" y="318" width="600" height="120" rx="12" fill="#FBFCFD" stroke="#4FA98B" stroke-width="1.6" filter="url(#sgsoft)"/>
+  <text x="80" y="342" font-size="13" font-weight="700" fill="#14503D">Nemotron 3 · Dec 2025 → Jun 2026</text>
+
+  <rect x="80" y="356" width="170" height="62" rx="9" fill="#E4F5EE" stroke="#8ECCB6"/>
+  <text x="165" y="376" font-size="11.5" font-weight="700" text-anchor="middle" fill="#14503D">Nano 30B-A3B</text>
+  <text x="165" y="392" font-size="9.5" text-anchor="middle" fill="#22624F">no latent, no MTP</text>
+  <text x="165" y="406" font-size="9.5" text-anchor="middle" fill="#22624F">the plain hybrid MoE</text>
+
+  <rect x="262" y="356" width="180" height="62" rx="9" fill="#E4F5EE" stroke="#8ECCB6"/>
+  <text x="352" y="376" font-size="11.5" font-weight="700" text-anchor="middle" fill="#14503D">Super 120B-A12B</text>
+  <text x="352" y="392" font-size="9.5" text-anchor="middle" fill="#22624F">+ LatentMoE (latent 1024)</text>
+  <text x="352" y="406" font-size="9.5" text-anchor="middle" fill="#22624F">+ trained-in MTP head</text>
+
+  <rect x="454" y="356" width="186" height="62" rx="9" fill="#A6E1CB" stroke="#3E9E7B" stroke-width="1.4"/>
+  <text x="547" y="376" font-size="11.5" font-weight="700" text-anchor="middle" fill="#14503D">Ultra 550B-A55B ★</text>
+  <text x="547" y="392" font-size="9.5" text-anchor="middle" fill="#14503D">latent 2048 · MTP × 2 shared</text>
+  <text x="547" y="406" font-size="9.5" text-anchor="middle" fill="#14503D">20T tok NVFP4 · 1M context</text>
+
+  <!-- labs branches -->
+  <path d="M165,418 C 165,450 165,455 165,458" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="178" y="448" font-size="9.5" fill="#9CA3AF">nest 3 sizes in one checkpoint (~160B tok)</text>
+  <rect x="80" y="462" width="290" height="40" rx="9" fill="#FBFCFD" stroke="#C9D1DB" filter="url(#sgsoft)"/>
+  <text x="225" y="479" font-size="11" font-weight="700" text-anchor="middle" fill="#374151">Labs · Elastic 30B-A3B</text>
+  <text x="225" y="494" font-size="9.5" text-anchor="middle" fill="#6B7280">30B ⊃ 23B ⊃ 12B, extracted zero-shot</text>
+
+  <path d="M420,418 C 460,440 490,450 510,458" stroke="#9CA3AF" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="432" y="448" font-size="9.5" fill="#9CA3AF">NAS-carve the cheapest faithful shape</text>
+  <rect x="410" y="462" width="272" height="40" rx="9" fill="#FBFCFD" stroke="#C9D1DB" filter="url(#sgsoft)"/>
+  <text x="546" y="479" font-size="11" font-weight="700" text-anchor="middle" fill="#374151">Labs · Puzzle 75B-A9B</text>
+  <text x="546" y="494" font-size="9.5" text-anchor="middle" fill="#6B7280">per-layer experts 4–18, state 96 · ~2× throughput</text>
+
+  <!-- convergence sidebar -->
+  <rect x="700" y="318" width="228" height="184" rx="12" fill="#FBFCFD" stroke="#C9D1DB" stroke-width="1.4" filter="url(#sgsoft)"/>
+  <text x="814" y="342" font-size="12" font-weight="700" text-anchor="middle" fill="#111827">where the field is converging</text>
+  <g font-size="10" fill="#374151">
+    <text x="716" y="366">· attention becoming a minority</text>
+    <text x="716" y="381">  ingredient: 1:7 → 8% → 12/108</text>
+    <text x="716" y="403">· experts: more, smaller, cheaper —</text>
+    <text x="716" y="418">  granular (256) → latent (512)</text>
+    <text x="716" y="440">· the drafter moved inside</text>
+    <text x="716" y="455">  the checkpoint</text>
+    <text x="716" y="477">· training dtype falling:</text>
+    <text x="716" y="492">  BF16 → FP8 → NVFP4</text>
+  </g>
+
+  <text x="928" y="512" font-size="10" font-style="italic" text-anchor="end" fill="#C0C5CD">papers: 2405.21060 · 2504.03624 · 2512.20856 · 2412.19437 · 2511.16664 · 2411.19146</text>
+</svg>

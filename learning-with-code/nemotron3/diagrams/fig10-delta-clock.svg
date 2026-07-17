@@ -1,0 +1,57 @@
+<svg viewBox="0 0 960 400" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Δ is a learned clock</title>
+  <desc>Two panels: a large step size makes the old state decay away and the new token write in strongly; a small step size keeps the state and mostly ignores the token. Selection is implemented as time.</desc>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700');text,tspan{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}</style>
+  <defs>
+    <filter id="sgsoft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="1.2" stdDeviation="2.4" flood-color="#1f2937" flood-opacity="0.09"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker>
+    <marker id="arrowT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9E7B"/></marker>
+  </defs>
+
+  <rect x="4" y="4" width="952" height="392" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="32" y="42" font-size="19" font-weight="700" fill="#111827">Δ is a <tspan fill="#3E9E7B">learned clock</tspan> — the token decides how much time "passes"</text>
+  <text x="32" y="63" font-size="12" fill="#6B7280">one recurrence, h ← e^(Δa)·h + (ΔB)·x — the token's own Δ moves it between two extremes</text>
+
+  <!-- left panel: large delta -->
+  <rect x="32" y="86" width="430" height="270" rx="12" fill="#FBFCFD" stroke="#C9D1DB" stroke-width="1.5" filter="url(#sgsoft)"/>
+  <text x="247" y="114" font-size="13.5" font-weight="700" text-anchor="middle" fill="#111827">large Δt — "a lot of time passes"</text>
+  <text x="247" y="133" font-size="11" text-anchor="middle" fill="#6B7280">e^(Δa) → 0 · write term ΔB·x is strong</text>
+
+  <!-- old state (faded) -->
+  <rect x="66" y="160" width="120" height="80" rx="10" fill="#EEF0F3" stroke="#C9D1DB" stroke-dasharray="4 3"/>
+  <text x="126" y="195" font-size="11" text-anchor="middle" fill="#9CA3AF">old state h</text>
+  <text x="126" y="212" font-size="10" text-anchor="middle" fill="#C0C5CD">washed out</text>
+  <!-- token -->
+  <rect x="216" y="176" width="86" height="46" rx="9" fill="#A6E1CB" stroke="#3E9E7B" filter="url(#sgsoft)"/>
+  <text x="259" y="204" font-size="12" text-anchor="middle" fill="#14503D" font-weight="600">token x</text>
+  <path d="M302,199 L336,199" stroke="#3E9E7B" stroke-width="2.4" marker-end="url(#arrowT)"/>
+  <!-- new state -->
+  <rect x="340" y="160" width="96" height="80" rx="10" fill="#A6E1CB" stroke="#3E9E7B" stroke-width="1.6" filter="url(#sgsoft)"/>
+  <text x="388" y="195" font-size="11.5" text-anchor="middle" fill="#14503D" font-weight="600">new h ≈</text>
+  <text x="388" y="212" font-size="11.5" text-anchor="middle" fill="#14503D" font-weight="600">the token</text>
+  <text x="247" y="280" font-size="11.5" text-anchor="middle" fill="#374151">the layer <tspan font-weight="700" fill="#14503D">overwrites</tspan>: this token matters, remember it</text>
+  <text x="247" y="330" font-size="10.5" text-anchor="middle" fill="#6B7280">(a &lt; 0 always, so bigger Δ ⇒ e^(Δa) smaller ⇒ faster forgetting)</text>
+
+  <!-- right panel: small delta -->
+  <rect x="498" y="86" width="430" height="270" rx="12" fill="#FBFCFD" stroke="#C9D1DB" stroke-width="1.5" filter="url(#sgsoft)"/>
+  <text x="713" y="114" font-size="13.5" font-weight="700" text-anchor="middle" fill="#111827">tiny Δt — "barely a moment"</text>
+  <text x="713" y="133" font-size="11" text-anchor="middle" fill="#6B7280">e^(Δa) ≈ 1 · write term ΔB·x is faint</text>
+
+  <!-- old state (solid) -->
+  <rect x="532" y="160" width="120" height="80" rx="10" fill="#A6E1CB" stroke="#3E9E7B" stroke-width="1.6" filter="url(#sgsoft)"/>
+  <text x="592" y="195" font-size="11" text-anchor="middle" fill="#14503D" font-weight="600">old state h</text>
+  <text x="592" y="212" font-size="10" text-anchor="middle" fill="#22624F">persists</text>
+  <!-- token (faded) -->
+  <rect x="682" y="176" width="86" height="46" rx="9" fill="#EEF0F3" stroke="#C9D1DB" stroke-dasharray="4 3"/>
+  <text x="725" y="204" font-size="12" text-anchor="middle" fill="#9CA3AF">token x</text>
+  <path d="M768,199 L802,199" stroke="#B6BEC8" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+  <!-- new state -->
+  <rect x="806" y="160" width="96" height="80" rx="10" fill="#A6E1CB" stroke="#3E9E7B" stroke-width="1.6" filter="url(#sgsoft)"/>
+  <text x="854" y="195" font-size="11.5" text-anchor="middle" fill="#14503D" font-weight="600">new h ≈</text>
+  <text x="854" y="212" font-size="11.5" text-anchor="middle" fill="#14503D" font-weight="600">old h</text>
+  <text x="713" y="280" font-size="11.5" text-anchor="middle" fill="#374151">the layer <tspan font-weight="700" fill="#14503D">ignores</tspan>: noise passes through, memory holds</text>
+  <text x="713" y="330" font-size="10.5" text-anchor="middle" fill="#6B7280">Δ comes from the token itself (x_proj → dt_proj) — filler words can learn tiny Δ</text>
+
+  <text x="32" y="382" font-size="11" fill="#374151">S4 had one fixed Δ for every token — it could never make this choice. That single change is "selective".</text>
+  <text x="928" y="382" font-size="10" font-style="italic" text-anchor="end" fill="#C0C5CD">code: mamba_simple.py · x_proj / dt_proj / selective_scan_fn</text>
+</svg>

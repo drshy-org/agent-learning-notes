@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 330" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="cs" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000000" flood-opacity="0.10"/></filter></defs>
+<rect x="4" y="4" width="952" height="322" rx="26" fill="#F5F5F7"/>
+<text x="255" y="46" text-anchor="middle" font-size="15" font-weight="800" fill="#1D1D1F">The org chart, MARL era</text>
+<text x="705" y="46" text-anchor="middle" font-size="15" font-weight="800" fill="#1D1D1F">The org chart, LLM era</text>
+<rect x="40" y="62" width="430" height="228" rx="16" fill="#FFEBEA" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<rect x="74" y="84" width="108" height="44" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="128" y="111" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">scout</text>
+<rect x="199" y="84" width="108" height="44" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="253" y="111" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">tank</text>
+<rect x="324" y="84" width="108" height="44" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="378" y="111" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">healer</text>
+<text x="255" y="165" text-anchor="middle" font-size="11" fill="#6E6E73">reward shaping per unit · hard-wired hierarchy</text>
+<text x="255" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#D70015"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">σ</tspan> chosen by the designer</text>
+<text x="255" y="262" text-anchor="middle" font-size="11" fill="#86868B">stale the moment the map changes</text>
+<rect x="490" y="62" width="430" height="228" rx="16" fill="#FFEBEA" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<rect x="516" y="84" width="112" height="44" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="572" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D1D1F">Product</text>
+<text x="572" y="119" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D1D1F">Manager</text>
+<rect x="646" y="84" width="112" height="44" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="702" y="111" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">Architect</text>
+<rect x="776" y="84" width="112" height="44" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="832" y="111" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">Engineer</text>
+<line x1="632" y1="106" x2="634" y2="106" stroke="#6E6E73" stroke-width="2"/><path d="M 633 100 L 644 106 L 633 112 Z" fill="#6E6E73"/>
+<line x1="762" y1="106" x2="764" y2="106" stroke="#6E6E73" stroke-width="2"/><path d="M 763 100 L 774 106 L 763 112 Z" fill="#6E6E73"/>
+<text x="705" y="165" text-anchor="middle" font-size="11" fill="#6E6E73">SOP as prompt sequence · persona in the system prompt</text>
+<text x="705" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#D70015"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">σ</tspan> written in natural language</text>
+<text x="705" y="262" text-anchor="middle" font-size="11" fill="#86868B">role disobedience: 1.5% of failures — fails anyway</text>
+</svg>

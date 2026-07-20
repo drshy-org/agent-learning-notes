@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="m4" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.09"/></filter></defs>
+<rect x="4" y="4" width="952" height="212" rx="20" fill="#F5F5F7"/>
+<text x="330" y="40" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1D1D1F">state space <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">S</tspan></text>
+<rect x="80" y="54" width="500" height="130" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#m4)"/>
+<rect x="88" y="62" width="152" height="114" rx="10" fill="#E9F3FF"/>
+<path d="M 112 150 C 138 110 158 130 183 92 C 196 76 208 80 216 74" stroke="#007AFF" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<circle cx="112" cy="150" r="5" fill="#007AFF"/>
+<text x="164" y="172" text-anchor="middle" font-size="12" font-weight="700" fill="#0B5CAD"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-size="72%" baseline-shift="-18%">1</tspan></text>
+<rect x="254" y="62" width="152" height="114" rx="10" fill="#FFF3E3"/>
+<path d="M 278 150 C 304 110 324 130 349 92 C 362 76 374 80 382 74" stroke="#FF9500" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<circle cx="278" cy="150" r="5" fill="#FF9500"/>
+<text x="330" y="172" text-anchor="middle" font-size="12" font-weight="700" fill="#B36200"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-size="72%" baseline-shift="-18%">2</tspan></text>
+<rect x="420" y="62" width="152" height="114" rx="10" fill="#E9F8EE"/>
+<path d="M 444 150 C 470 110 490 130 515 92 C 528 76 540 80 548 74" stroke="#34C759" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<circle cx="444" cy="150" r="5" fill="#34C759"/>
+<text x="496" y="172" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-size="72%" baseline-shift="-18%">3</tspan></text>
+<rect x="620" y="54" width="280" height="130" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#m4)"/>
+<text x="760" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#1D1D1F">skills differ in WHERE they go</text>
+<text x="760" y="102" text-anchor="middle" font-size="10" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">I</tspan>(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">S</tspan> ; <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">Z</tspan>) ↑ — readable from states</text>
+<text x="760" y="130" text-anchor="middle" font-size="10.5" font-weight="700" fill="#D70015">not in tics:  <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">I</tspan>(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">A</tspan> ; <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">Z</tspan> | <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">S</tspan>) ↓</text>
+<text x="760" y="158" text-anchor="middle" font-size="10" fill="#6E6E73">otherwise stay random:  <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">H</tspan>[<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">A</tspan> | <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">S</tspan>] ↑</text>
+<text x="480" y="206" text-anchor="middle" font-size="10" fill="#86868B">the discriminator <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">q</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">φ</tspan>(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan> | <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">s</tspan>) turns this into a per-step reward</text>
+</svg>

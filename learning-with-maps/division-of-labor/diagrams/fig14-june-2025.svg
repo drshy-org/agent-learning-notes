@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 290" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="cs" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000000" flood-opacity="0.10"/></filter></defs>
+<rect x="4" y="4" width="952" height="282" rx="26" fill="#F5F5F7"/>
+<text x="480" y="40" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1D1D1F">Three posts, four days — June 2025</text>
+<line x1="80" y1="168" x2="880" y2="168" stroke="#D9D9DE" stroke-width="2"/>
+<rect x="84" y="58" width="224" height="84" rx="16" fill="#FFEBEA" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="196" y="84" text-anchor="middle" font-size="12" font-weight="800" fill="#1D1D1F">Jun 12 · Cognition</text>
+<text x="196" y="106" text-anchor="middle" font-size="10.5" fill="#D70015">"only results in fragile systems"</text>
+<text x="196" y="124" text-anchor="middle" font-size="10.5" fill="#D70015">don't divide the labor</text>
+<circle cx="196" cy="168" r="5.5" fill="#D70015"/>
+<rect x="370" y="58" width="224" height="84" rx="16" fill="#E9F8EE" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="482" y="84" text-anchor="middle" font-size="12" font-weight="800" fill="#1D1D1F">Jun 13 · Anthropic</text>
+<text x="482" y="106" text-anchor="middle" font-size="10.5" fill="#1F7A42">+90.2% over single Opus 4</text>
+<text x="482" y="124" text-anchor="middle" font-size="10.5" fill="#1F7A42">…at ~15× the tokens</text>
+<circle cx="482" cy="168" r="5.5" fill="#1F7A42"/>
+<rect x="656" y="58" width="224" height="84" rx="16" fill="#E9F3FF" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="768" y="84" text-anchor="middle" font-size="12" font-weight="800" fill="#1D1D1F">Jun 16 · LangChain</text>
+<text x="768" y="106" text-anchor="middle" font-size="10.5" fill="#0B5CAD">reads parallelize, writes don't</text>
+<text x="768" y="124" text-anchor="middle" font-size="10.5" fill="#0B5CAD">decompose only what factorizes</text>
+<circle cx="768" cy="168" r="5.5" fill="#0B5CAD"/>
+<rect x="210" y="198" width="540" height="58" rx="16" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="480" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">the condition all three describe is IGM</text>
+<text x="480" y="242" text-anchor="middle" font-size="10.5" fill="#6E6E73">divide the labor exactly when the optimum factorizes — MARL wrote this down in 2018–2021</text>
+</svg>

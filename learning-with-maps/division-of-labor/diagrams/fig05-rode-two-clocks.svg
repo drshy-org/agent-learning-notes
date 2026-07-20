@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="cs" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000000" flood-opacity="0.10"/></filter></defs>
+<rect x="4" y="4" width="952" height="292" rx="26" fill="#F5F5F7"/>
+<circle cx="56" cy="42" r="14" fill="#007AFF" stroke="#FFFFFF" stroke-width="2.5"/><text x="56" y="46.8" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">1</text>
+<text x="78" y="47" text-anchor="start" font-size="13" font-weight="800" fill="#1D1D1F">embed actions by effect</text>
+<circle cx="88" cy="84" r="6" fill="#8E8E93"/>
+<circle cx="118" cy="70" r="6" fill="#8E8E93"/>
+<circle cx="148" cy="90" r="6" fill="#8E8E93"/>
+<circle cx="188" cy="74" r="6" fill="#8E8E93"/>
+<circle cx="228" cy="84" r="6" fill="#8E8E93"/>
+<circle cx="263" cy="66" r="6" fill="#8E8E93"/>
+<circle cx="293" cy="86" r="6" fill="#8E8E93"/>
+<text x="190" y="122" text-anchor="middle" font-size="11" fill="#6E6E73"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">a</tspan> ← predict (<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">o</tspan>′, <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">r</tspan>)</text>
+<circle cx="56" cy="160" r="14" fill="#007AFF" stroke="#FFFFFF" stroke-width="2.5"/><text x="56" y="164.8" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">2</text>
+<text x="78" y="165" text-anchor="start" font-size="13" font-weight="800" fill="#1D1D1F">k-means in effect space</text>
+<rect x="58" y="180" width="92" height="52" rx="11" fill="#E9F3FF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="104" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#0B5CAD"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">A</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-size="72%" baseline-shift="-18%">1</tspan> · move</text>
+<rect x="158" y="180" width="92" height="52" rx="11" fill="#FFF3E3" stroke="#E2E2E7" stroke-width="1"/>
+<text x="204" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#B36200"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">A</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-size="72%" baseline-shift="-18%">2</tspan> · attack</text>
+<rect x="258" y="180" width="92" height="52" rx="11" fill="#E9F8EE" stroke="#E2E2E7" stroke-width="1"/>
+<text x="304" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">A</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-size="72%" baseline-shift="-18%">3</tspan> · heal</text>
+<text x="190" y="262" text-anchor="middle" font-size="10.5" fill="#86868B">each cluster = one role's restricted menu</text>
+<circle cx="438" cy="42" r="14" fill="#007AFF" stroke="#FFFFFF" stroke-width="2.5"/><text x="438" y="46.8" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">3</text>
+<text x="460" y="47" text-anchor="start" font-size="13" font-weight="800" fill="#1D1D1F">two clocks</text>
+<rect x="420" y="62" width="500" height="200" rx="16" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<rect x="448" y="88" width="190" height="52" rx="11" fill="#E9F8EE" stroke="#E2E2E7" stroke-width="1"/>
+<text x="543" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">role selector</text>
+<text x="543" y="126" text-anchor="middle" font-size="10" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">τ</tspan> · <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan>, every <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">c</tspan> steps</text>
+<rect x="682" y="88" width="190" height="52" rx="11" fill="#F6ECFB" stroke="#E2E2E7" stroke-width="1"/>
+<text x="777" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">role policy</text>
+<text x="777" y="126" text-anchor="middle" font-size="10" fill="#7D3CBD"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">τ</tspan> · <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">a</tspan>, inside <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">A</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">j</tspan> only</text>
+<line x1="642" y1="114" x2="670" y2="114" stroke="#1D1D1F" stroke-width="2.5"/><path d="M 669 108 L 680 114 L 669 120 Z" fill="#1D1D1F"/>
+<rect x="448" y="172" width="424" height="56" rx="11" fill="#F2F2F5" stroke="#E2E2E7" stroke-width="1"/>
+<text x="660" y="194" text-anchor="middle" font-size="11" font-weight="700" fill="#1D1D1F">team reward → two QMIX mixers → both levels</text>
+<text x="660" y="212" text-anchor="middle" font-size="10" fill="#6E6E73">structure and behavior are both trained</text>
+</svg>

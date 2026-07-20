@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 206" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="m1" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.09"/></filter></defs>
+<rect x="4" y="4" width="952" height="198" rx="20" fill="#F5F5F7"/>
+<text x="250" y="40" text-anchor="middle" font-size="13" font-weight="800" fill="#1D1D1F">identifiability</text>
+<rect x="60" y="54" width="390" height="116" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#m1)"/>
+<rect x="96" y="86" width="42" height="34" rx="8" fill="#F2F2F5" stroke="#E2E2E7"/>
+<text x="117" y="107" text-anchor="middle" font-size="11" fill="#6E6E73">o<tspan font-size="8" baseline-shift="sub">1</tspan></text>
+<rect x="152" y="86" width="42" height="34" rx="8" fill="#F2F2F5" stroke="#E2E2E7"/>
+<text x="173" y="107" text-anchor="middle" font-size="11" fill="#6E6E73">o<tspan font-size="8" baseline-shift="sub">2</tspan></text>
+<rect x="208" y="86" width="42" height="34" rx="8" fill="#F2F2F5" stroke="#E2E2E7"/>
+<text x="229" y="107" text-anchor="middle" font-size="11" fill="#6E6E73">o<tspan font-size="8" baseline-shift="sub">3</tspan></text>
+<text x="180" y="146" text-anchor="middle" font-size="10" fill="#86868B">the agent’s own trajectory <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">τ</tspan></text>
+<line x1="272" y1="103" x2="330" y2="103" stroke="#1D1D1F" stroke-width="2.2"/>
+<path d="M 329 97 L 340 103 L 329 109 Z" fill="#1D1D1F"/>
+<circle cx="382" cy="103" r="24" fill="#E9F8EE" stroke="#34C759" stroke-width="2"/>
+<text x="382" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></text>
+<text x="382" y="150" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1F7A42">readable: <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">I</tspan>(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan> ; <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">τ</tspan> | <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">o</tspan>) ↑</text>
+<text x="710" y="40" text-anchor="middle" font-size="13" font-weight="800" fill="#1D1D1F">specialization</text>
+<rect x="510" y="54" width="390" height="116" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#m1)"/>
+<circle cx="580" cy="100" r="22" fill="#E9F8EE" stroke="#34C759" stroke-width="2"/>
+<text x="580" y="105" text-anchor="middle" font-size="12" font-weight="700" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan></text>
+<circle cx="722" cy="100" r="22" fill="#E9F3FF" stroke="#007AFF" stroke-width="2"/>
+<text x="722" y="105" text-anchor="middle" font-size="12" font-weight="700" fill="#0B5CAD"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">j</tspan></text>
+<line x1="606" y1="100" x2="696" y2="100" stroke="#FF9500" stroke-width="2.2" stroke-dasharray="5 4"/>
+<path d="M 612 94 L 602 100 L 612 106 Z" fill="#FF9500"/><path d="M 690 94 L 700 100 L 690 106 Z" fill="#FF9500"/>
+<text x="651" y="88" text-anchor="middle" font-size="10" font-weight="600" fill="#B36200">push apart</text>
+<text x="651" y="124" text-anchor="middle" font-size="10" fill="#B36200">capped at U</text>
+<circle cx="826" cy="94" r="15" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1.5"/>
+<circle cx="840" cy="106" r="15" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1.5"/>
+<text x="833" y="142" text-anchor="middle" font-size="9.5" fill="#6E6E73">or mutually predictable</text>
+<text x="833" y="156" text-anchor="middle" font-size="9.5" fill="#86868B">(same role, in effect)</text>
+</svg>

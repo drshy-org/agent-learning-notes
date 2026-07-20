@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 268" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="cs" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000000" flood-opacity="0.10"/></filter></defs>
+<rect x="4" y="4" width="952" height="260" rx="26" fill="#F5F5F7"/>
+<rect x="36" y="96" width="146" height="54" rx="16" fill="#F2F2F5" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="109" y="118" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">observation</text>
+<text x="109" y="136" text-anchor="middle" font-size="10.5" fill="#6E6E73"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">o</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan></text>
+<rect x="222" y="96" width="146" height="54" rx="16" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="295" y="118" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">role encoder <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">f</tspan></text>
+<text x="295" y="136" text-anchor="middle" font-size="10.5" fill="#6E6E73">(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">μ</tspan>, <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">σ</tspan>)</text>
+<rect x="408" y="96" width="146" height="54" rx="16" fill="#E9F8EE" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="481" y="118" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">role <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan></text>
+<text x="481" y="136" text-anchor="middle" font-size="10.5" fill="#6E6E73">sampled latent</text>
+<rect x="594" y="96" width="146" height="54" rx="16" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="667" y="118" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">hypernet <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">g</tspan></text>
+<text x="667" y="136" text-anchor="middle" font-size="10.5" fill="#6E6E73">→ policy params <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">θ</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan></text>
+<rect x="780" y="96" width="146" height="54" rx="16" fill="#F2F2F5" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<text x="853" y="118" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1D1D1F">action <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">a</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan></text>
+<text x="853" y="136" text-anchor="middle" font-size="10.5" fill="#6E6E73">same menu for all</text>
+<line x1="186" y1="123" x2="210" y2="123" stroke="#1D1D1F" stroke-width="2.5"/><path d="M 209 117 L 220 123 L 209 129 Z" fill="#1D1D1F"/>
+<line x1="372" y1="123" x2="396" y2="123" stroke="#1D1D1F" stroke-width="2.5"/><path d="M 395 117 L 406 123 L 395 129 Z" fill="#1D1D1F"/>
+<line x1="558" y1="123" x2="582" y2="123" stroke="#1D1D1F" stroke-width="2.5"/><path d="M 581 117 L 592 123 L 581 129 Z" fill="#1D1D1F"/>
+<line x1="744" y1="123" x2="768" y2="123" stroke="#1D1D1F" stroke-width="2.5"/><path d="M 767 117 L 778 123 L 767 129 Z" fill="#1D1D1F"/>
+<path d="M 481 94 C 440 42 300 42 288 90" stroke="#AF52DE" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+<text x="380" y="40" text-anchor="middle" font-size="11" font-weight="600" fill="#7D3CBD">identifiability: <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">I</tspan>(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan> ; own trajectory | obs)</text>
+<path d="M 481 152 C 481 200 590 212 660 214" stroke="#AF52DE" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+<text x="570" y="236" text-anchor="middle" font-size="11" font-weight="600" fill="#7D3CBD">specialization: push distinct agents apart (capped at <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">U</tspan>)</text>
+<text x="480" y="256" text-anchor="middle" font-size="10.5" fill="#86868B">trained jointly with the QMIX-style team TD loss — credit reaches the role sampler</text>
+</svg>

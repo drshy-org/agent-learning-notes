@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 306" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="cs" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000000" flood-opacity="0.10"/></filter></defs>
+<rect x="4" y="4" width="952" height="298" rx="26" fill="#F5F5F7"/>
+<text x="255" y="46" text-anchor="middle" font-size="14" font-weight="800" fill="#1D1D1F">ROMA, 2020</text>
+<text x="705" y="46" text-anchor="middle" font-size="14" font-weight="800" fill="#1D1D1F">AutoAgents / AgentVerse, 2023</text>
+<rect x="45" y="62" width="400" height="200" rx="16" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<rect x="75" y="84" width="140" height="50" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="145" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#1D1D1F">Gaussian encoder</text>
+<text x="145" y="121" text-anchor="middle" font-size="10" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">f</tspan>(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">o</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan>)</text>
+<rect x="255" y="84" width="160" height="50" rx="11" fill="#E9F8EE" stroke="#E2E2E7" stroke-width="1"/>
+<text x="335" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#1D1D1F"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan> — vector latent</text>
+<text x="335" y="121" text-anchor="middle" font-size="10" fill="#1F7A42">→ hypernet → policy</text>
+<line x1="219" y1="109" x2="243" y2="109" stroke="#1D1D1F" stroke-width="2"/><path d="M 242 103 L 253 109 L 242 115 Z" fill="#1D1D1F"/>
+<path d="M 335 136 C 335 185 210 200 160 200 C 128 200 118 160 136 136" stroke="#34C759" stroke-width="2.5" fill="none"/>
+<text x="245" y="226" text-anchor="middle" font-size="11" font-weight="700" fill="#1F7A42">team reward reaches the sampler</text>
+<rect x="515" y="62" width="400" height="200" rx="16" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<rect x="545" y="84" width="140" height="50" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="615" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#1D1D1F">planner LLM</text>
+<text x="615" y="121" text-anchor="middle" font-size="10" fill="#6E6E73">reads the task</text>
+<rect x="725" y="84" width="160" height="50" rx="11" fill="#FFF3E3" stroke="#E2E2E7" stroke-width="1"/>
+<text x="805" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#1D1D1F"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan> — persona text</text>
+<text x="805" y="121" text-anchor="middle" font-size="10" fill="#B36200">→ prompts a frozen LLM</text>
+<line x1="689" y1="109" x2="713" y2="109" stroke="#1D1D1F" stroke-width="2"/><path d="M 712 103 L 723 109 L 712 115 Z" fill="#1D1D1F"/>
+<path d="M 805 136 C 805 185 680 200 630 200 C 598 200 588 160 606 136" stroke="#FF3B30" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
+<text x="715" y="226" text-anchor="middle" font-size="11" font-weight="700" fill="#D70015">missing: no signal returns to the sampler</text>
+<line x1="450" y1="160" x2="510" y2="160" stroke="#AF52DE" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="480" y="146" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7D3CBD">same slot</text>
+<text x="480" y="288" text-anchor="middle" font-size="11" fill="#6E6E73">the latent changed substrate — vector → paragraph — and lost its gradient on the way</text>
+</svg>

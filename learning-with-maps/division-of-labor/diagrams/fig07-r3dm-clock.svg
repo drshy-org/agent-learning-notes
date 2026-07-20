@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 216" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="m3" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.09"/></filter></defs>
+<rect x="4" y="4" width="952" height="208" rx="20" fill="#F5F5F7"/>
+<text x="48" y="38" text-anchor="start" font-size="13" font-weight="800" fill="#1D1D1F">the bound, unrolled on the clock</text>
+<rect x="120" y="66" width="60" height="40" rx="9" fill="#F2F2F5" stroke="#E2E2E7"/>
+<rect x="194" y="66" width="60" height="40" rx="9" fill="#F2F2F5" stroke="#E2E2E7"/>
+<rect x="268" y="66" width="60" height="40" rx="9" fill="#F2F2F5" stroke="#E2E2E7"/>
+<text x="230" y="128" text-anchor="middle" font-size="10" fill="#6E6E73">past trajectory <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">τ</tspan> up to <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">t</tspan></text>
+<rect x="346" y="52" width="34" height="26" rx="8" fill="#34C759"/>
+<text x="363" y="69" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">m</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="34%">t</tspan></text>
+<text x="363" y="128" text-anchor="middle" font-size="10" fill="#1F7A42">role held at <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">t</tspan></text>
+<line x1="363" y1="80" x2="363" y2="94" stroke="#1F7A42" stroke-width="1.8"/>
+<rect x="420" y="66" width="60" height="40" rx="9" fill="#E9F8EE" stroke="#34C759"/>
+<rect x="494" y="66" width="60" height="40" rx="9" fill="#E9F8EE" stroke="#34C759"/>
+<rect x="568" y="66" width="60" height="40" rx="9" fill="#E9F8EE" stroke="#34C759"/>
+<path d="M 420 58 L 420 50 L 642 50 L 642 58" stroke="#1F7A42" stroke-width="1.6" fill="none"/>
+<text x="531" y="42" text-anchor="middle" font-size="10" font-weight="600" fill="#1F7A42">next <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">k</tspan> steps — the role must make these more predictable</text>
+<text x="531" y="128" text-anchor="middle" font-size="10" fill="#1F7A42">future trajectory <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">τ</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-size="72%" baseline-shift="34%">t+1:t+k</tspan></text>
+<rect x="150" y="152" width="290" height="36" rx="10" fill="#FFFFFF" stroke="#E2E2E7"/>
+<text x="295" y="168" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6E6E73">past-conditioned term</text>
+<text x="295" y="182" text-anchor="middle" font-size="9.5" fill="#86868B">handled ACORM-style (embedding)</text>
+<rect x="470" y="152" width="340" height="36" rx="10" fill="#E9F8EE" stroke="#34C759"/>
+<text x="640" y="168" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1F7A42">future term → paid as intrinsic reward</text>
+<text x="640" y="182" text-anchor="middle" font-size="9.5" fill="#1F7A42">KL(role-conditioned ∥ role-averaged) + world-model likelihood gap</text>
+</svg>

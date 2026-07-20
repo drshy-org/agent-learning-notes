@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 236" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="m2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.09"/></filter></defs>
+<rect x="4" y="4" width="952" height="228" rx="20" fill="#F5F5F7"/>
+<text x="480" y="40" text-anchor="middle" font-size="13" font-weight="800" fill="#1D1D1F">the classification game inside <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">L</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-size="72%" baseline-shift="-18%">K</tspan></text>
+<rect x="150" y="56" width="660" height="140" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#m2)"/>
+<circle cx="330" cy="126" r="52" fill="none" stroke="#34C759" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="330" y="62" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1F7A42">cluster <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">C</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">j</tspan></text>
+<circle cx="308" cy="112" r="9" fill="#34C759"/>
+<circle cx="352" cy="116" r="9" fill="#34C759"/>
+<circle cx="330" cy="148" r="9" fill="#34C759"/>
+<text x="285" y="105" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">z</tspan><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic" font-size="72%" baseline-shift="-18%">i</tspan></text>
+<line x1="308" y1="112" x2="330" y2="126" stroke="#1F7A42" stroke-width="1.6" opacity="0.65"/>
+<line x1="352" y1="116" x2="330" y2="126" stroke="#1F7A42" stroke-width="1.6" opacity="0.65"/>
+<line x1="330" y1="148" x2="330" y2="126" stroke="#1F7A42" stroke-width="1.6" opacity="0.65"/>
+<text x="330" y="186" text-anchor="middle" font-size="10" font-weight="600" fill="#1F7A42">pull together — numerator</text>
+<circle cx="580" cy="96" r="9" fill="#8E8E93"/>
+<line x1="580" y1="96" x2="604" y2="82" stroke="#FF3B30" stroke-width="1.8"/>
+<path d="M 604 82 l -7 -2 l 3 6 Z" fill="#FF3B30"/>
+<circle cx="622" cy="132" r="9" fill="#8E8E93"/>
+<line x1="622" y1="132" x2="648" y2="138" stroke="#FF3B30" stroke-width="1.8"/>
+<path d="M 648 138 l -7 -2 l 3 6 Z" fill="#FF3B30"/>
+<circle cx="576" cy="162" r="9" fill="#8E8E93"/>
+<line x1="576" y1="162" x2="550" y2="172" stroke="#FF3B30" stroke-width="1.8"/>
+<path d="M 550 172 l 8 -1 l -3 7 Z" fill="#FF3B30"/>
+<text x="600" y="186" text-anchor="middle" font-size="10" font-weight="600" fill="#D70015">push apart — the denominator’s extra term</text>
+<text x="480" y="216" text-anchor="middle" font-size="10" fill="#86868B">score between embeddings = learned bilinear <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">W</tspan> · winner should be your own cluster</text>
+</svg>

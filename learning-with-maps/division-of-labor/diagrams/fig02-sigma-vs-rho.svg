@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 320" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" style="max-width:100%;height:auto">
+<defs><filter id="cs" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000000" flood-opacity="0.10"/></filter></defs>
+<rect x="4" y="4" width="952" height="312" rx="26" fill="#F5F5F7"/>
+<text x="250" y="46" text-anchor="middle" font-size="15" font-weight="800" fill="#1D1D1F"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">σ</tspan> as input</text>
+<text x="710" y="46" text-anchor="middle" font-size="15" font-weight="800" fill="#1D1D1F"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan> as output</text>
+<rect x="40" y="62" width="420" height="218" rx="16" fill="#F2F2F5" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<rect x="88" y="86" width="130" height="48" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="153" y="106" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">designer</text>
+<text x="153" y="122" text-anchor="middle" font-size="10.5" fill="#6E6E73">writes <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">σ</tspan></text>
+<rect x="262" y="86" width="130" height="48" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="327" y="106" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">policies</text>
+<text x="327" y="122" text-anchor="middle" font-size="10.5" fill="#6E6E73">learn inside roles</text>
+<line x1="222" y1="110" x2="250" y2="110" stroke="#6E6E73" stroke-width="2"/><path d="M 249 104 L 260 110 L 249 116 Z" fill="#6E6E73"/>
+<rect x="88" y="168" width="304" height="48" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="240" y="188" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">objective J</text>
+<text x="240" y="204" text-anchor="middle" font-size="10.5" fill="#6E6E73">never sees the structure</text>
+<text x="250" y="258" text-anchor="middle" font-size="11" fill="#86868B"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">σ</tspan> is a constant of the experiment</text>
+<rect x="500" y="62" width="420" height="218" rx="16" fill="#E9F8EE" stroke="#E2E2E7" stroke-width="1" filter="url(#cs)"/>
+<rect x="548" y="86" width="130" height="48" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="613" y="106" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">sampler <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">p</tspan>(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan>)</text>
+<text x="613" y="122" text-anchor="middle" font-size="10.5" fill="#1F7A42">generates roles</text>
+<rect x="722" y="86" width="130" height="48" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="787" y="106" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">policies</text>
+<text x="787" y="122" text-anchor="middle" font-size="10.5" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">π</tspan>(<tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">a</tspan> | <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">τ</tspan>, <tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan>)</text>
+<line x1="682" y1="110" x2="710" y2="110" stroke="#1D1D1F" stroke-width="2"/><path d="M 709 104 L 720 110 L 709 116 Z" fill="#1D1D1F"/>
+<rect x="548" y="168" width="304" height="48" rx="11" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1"/>
+<text x="700" y="188" text-anchor="middle" font-size="12" font-weight="700" fill="#1D1D1F">objective J</text>
+<text x="700" y="204" text-anchor="middle" font-size="10.5" fill="#1F7A42">gradients reach the sampler</text>
+<path d="M 700 166 C 675 152 645 144 616 138" stroke="#34C759" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+<text x="710" y="258" text-anchor="middle" font-size="11" fill="#1F7A42"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic"><tspan font-family="'STIX Two Text','Cambria Math','Times New Roman',serif" font-style="italic">ρ</tspan></tspan> is a learned latent — the org chart is an output</text>
+</svg>

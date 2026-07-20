@@ -567,3 +567,7 @@ If you'd like to cite this post:
   url     = {https://github.com/drshy-org/agent-learning-notes/tree/main/learning-with-maps/division-of-labor}
 }
 ```
+
+---
+
+*© 2026 Hongyu Shen — original writing and figures, all rights reserved. Paper excerpts are quoted with attribution to their authors.*

@@ -22,19 +22,19 @@ The cleanest formal statement of what this camp does was written by the camp its
 AFlow, from the MetaGPT team, wrote the same statement as an optimization problem, and its notation is worth adopting for the whole post:
 
 $$
-W^{*} = \arg\max_{W \in \mathcal{S}}\ G(W, T)
+W^{\ast} = \arg\max_{W \in \mathcal{S}}\ G(W, T)
 $$
 
-$W$ is a candidate workflow — in AFlow's definition, a set of LLM-invoking nodes (each carrying a model, a prompt, a temperature, an output format) wired together by edges, with code as the edge representation; $\mathcal{S}$ is the search space of all representable workflows; $T$ is the task; $G$ is the evaluation function — run the workflow, score the result. The org chart is $W$. The camp's founding claim is that $W^{*}$ found by machine beats $W$ written by hand.
+$W$ is a candidate workflow — in AFlow's definition, a set of LLM-invoking nodes (each carrying a model, a prompt, a temperature, an output format) wired together by edges, with code as the edge representation; $\mathcal{S}$ is the search space of all representable workflows; $T$ is the task; $G$ is the evaluation function — run the workflow, score the result. The org chart is $W$. The camp's founding claim is that $W^{\ast}$ found by machine beats $W$ written by hand.
 
 But the equation hides the distinction that, in hindsight, organizes the camp's entire development. Ask: **when is $W$ fixed?** ADAS's three axes say what can be searched and how; they do not say when the search happens relative to the work. Call that fourth axis the **binding time** of the structure. The framing is mine, not any paper's — ADAS's formulation names the space, the algorithm, and the evaluator, and stops there. It is the axis the camp actually moved along:
 
 $$
-W^{*} = \arg\max_{W}\ G(W,T)
+W^{\ast} = \arg\max_{W}\ G(W,T)
 \quad\longrightarrow\quad
-\mathbb{P}^{*}(W \mid q)
+\mathbb{P}^{\ast}(W \mid q)
 \quad\longrightarrow\quad
-\pi^{*}(W_t \mid s_t)
+\pi^{\ast}(W_t \mid s_t)
 $$
 
 Read left to right: first the chart is a frozen artifact, searched once against a validation set and deployed (GPTSwarm, ADAS, AFlow — 2024); then it is a conditional distribution, sampled fresh for every incoming query (MaAS, MAS-GPT — 2025); finally it is a policy $\pi$, emitting structure step by step as the task's state $s_t$ evolves (the 2026 wave). Each arrow binds the structure later. Nothing in the camp's history moves the other way.
@@ -68,7 +68,7 @@ Reading this history, I stake three checkable claims:
 **GPTSwarm (ICML 2024 oral): the chart is a graph, and the graph is a distribution.** Nodes are agent operations, edges are who-talks-to-whom, and each potential edge carries a probability — a parameter vector $\theta$ defines a distribution $D_{\theta}$ over graphs, tuned by REINFORCE (the classic policy-gradient estimator — the $\nabla\log p$ update GRPO later descends from) against measured task utility:
 
 $$
-\theta^{*} = \arg\max_{\theta \in \Theta}\ \mathbb{E}_{G \sim D_{\theta}}\left[ u_{\tau}(G) \right]
+\theta^{\ast} = \arg\max_{\theta \in \Theta}\ \mathbb{E}_{G \sim D_{\theta}}\left[ u_{\tau}(G) \right]
 $$
 
 $$

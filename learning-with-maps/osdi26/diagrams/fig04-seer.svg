@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1060 520" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" role="img" aria-label="fig04-seer">
+<defs><filter id="ds-fig04-seer" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000" flood-opacity="0.10"/></filter></defs>
+<rect width="1060" height="520" rx="26" fill="#F5F5F7"/>
+<rect x="28" y="26" width="714.5" height="40" rx="10" fill="#1D1D1F"/><text x="46" y="52" font-size="17" font-weight="700" fill="#FFFFFF">Seer - the scheduler learns job lengths from the jobs (S10)</text>
+<text x="80" y="100" font-size="13" font-weight="600" fill="#6E6E73" text-anchor="start">synchronous RL rollout, one iteration (63-87% of iteration time)</text>
+<rect x="80" y="110" width="288.0" height="44" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="1.5"/><text x="90" y="130" font-size="12.5" font-weight="700" fill="#1D1D1F" text-anchor="start">early: high concurrency</text>
+<text x="90" y="146" font-size="11" font-weight="400" fill="#6E6E73" text-anchor="start">KV explodes -&gt; preemption storms</text>
+<rect x="368.0" y="110" width="252.00000000000003" height="44" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1.5"/><text x="378.0" y="130" font-size="12.5" font-weight="700" fill="#1D1D1F" text-anchor="start">middle: mixed</text>
+<text x="378.0" y="146" font-size="11" font-weight="400" fill="#6E6E73" text-anchor="start">probe results -&gt; reorder</text>
+<rect x="620.0" y="110" width="360.0" height="44" rx="10" fill="#FFEBEA" stroke="#FF3B30" stroke-width="1.5"/><text x="630.0" y="130" font-size="12.5" font-weight="700" fill="#1D1D1F" text-anchor="start">tail: a few giant requests</text>
+<text x="630.0" y="146" font-size="11" font-weight="400" fill="#6E6E73" text-anchor="start">last 10% eat ~half the time</text>
+<rect x="80" y="230" width="540" height="76" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig04-seer)"/>
+<circle cx="80" cy="230" r="14" fill="#007AFF" stroke="#FFFFFF" stroke-width="2.5"/><text x="80" y="234.5" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="106" y="256" font-size="14.5" font-weight="800" fill="#1D1D1F" text-anchor="start">Divided Rollout</text>
+<text x="106" y="278" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">groups split to chunks; KV migrates via a global Mooncake pool - eviction</text>
+<text x="106" y="294" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">becomes relocation (13,686 preemptions in one iteration without it)</text>
+<line x1="140" y1="230" x2="215.64817737398172" y2="165.15870510801565" stroke="#1D1D1F" stroke-width="2.5"/><polygon points="224.0,158 219.22752992798956,169.33461642102478 212.06882481997388,160.98279379500653" fill="#1D1D1F"/>
+<rect x="260" y="322" width="540" height="76" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig04-seer)"/>
+<circle cx="260" cy="322" r="14" fill="#007AFF" stroke="#FFFFFF" stroke-width="2.5"/><text x="260" y="326.5" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="286" y="348" font-size="14.5" font-weight="800" fill="#1D1D1F" text-anchor="start">Probe request per GRPO group</text>
+<text x="286" y="370" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">one sample runs first; its length prices the whole group (same prompt -&gt;</text>
+<text x="286" y="386" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">similar lengths)</text>
+<line x1="320" y1="322" x2="485.9952045087296" y2="165.54474977338128" stroke="#1D1D1F" stroke-width="2.5"/><polygon points="494.0,158 489.7675793954203,169.54714751901648 482.22282962203894,161.5423520277461" fill="#1D1D1F"/>
+<rect x="420" y="414" width="540" height="76" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig04-seer)"/>
+<circle cx="420" cy="414" r="14" fill="#007AFF" stroke="#FFFFFF" stroke-width="2.5"/><text x="420" y="418.5" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="446" y="440" font-size="14.5" font-weight="800" fill="#1D1D1F" text-anchor="start">Grouped speculative decoding</text>
+<text x="446" y="462" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">the group's own text = a drift-free draft model (a compressed suffix tree</text>
+<text x="446" y="478" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">per group)</text>
+<line x1="480" y1="414" x2="791.4104430961266" y2="164.87164552309866" stroke="#1D1D1F" stroke-width="2.5"/><polygon points="800.0,158 794.846265857676,169.16642397503534 787.9746203345773,160.57686707116198" fill="#1D1D1F"/>
+<text x="80" y="510" font-size="14" font-weight="700" fill="#34C759" text-anchor="start">result: 2.04x rollout throughput, tail latency -72-94% - beats an oracle that knows true lengths</text>
+<text x="80" y="534" font-size="12.5" font-weight="400" fill="#86868B" text-anchor="start">old word: SJF/LFS need job lengths; 1970s answer: ask the operator. 2026 answer: run one sample.</text>
+</svg>

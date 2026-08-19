@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1060 748" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" role="img" aria-label="fig01-grid">
+<defs><filter id="ds-fig01-grid" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000" flood-opacity="0.10"/></filter></defs>
+<rect width="1060" height="748" rx="26" fill="#F5F5F7"/>
+<rect x="28" y="26" width="749.0" height="40" rx="10" fill="#1D1D1F"/><text x="46" y="52" font-size="17" font-weight="700" fill="#FFFFFF">OSDI '26 - all 31 sessions, colored by what the words point at</text>
+<text x="262.0" y="94" font-size="14" font-weight="700" fill="#1D1D1F" text-anchor="middle">Track 1</text>
+<text x="564.0" y="94" font-size="14" font-weight="700" fill="#6E6E73" text-anchor="middle">Track 2</text>
+<text x="866.0" y="94" font-size="14" font-weight="700" fill="#6E6E73" text-anchor="middle">Track 3</text>
+<text x="102" y="133.0" font-size="13" font-weight="700" fill="#86868B" text-anchor="end">Mon</text>
+<rect x="118" y="108" width="288" height="40" rx="10" fill="#FFEBEA" stroke="#FF3B30" stroke-width="2"/><text x="130" y="132.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">KV Cache &amp; Long Context</text>
+<rect x="420" y="108" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="432" y="132.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Memory Tiering &amp; CXL</text>
+<rect x="722" y="108" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="734" y="132.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Sandboxing &amp; Access Ctrl</text>
+<rect x="118" y="157" width="288" height="40" rx="10" fill="#FFEBEA" stroke="#FF3B30" stroke-width="2"/><text x="130" y="181.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">LLM Training at Scale</text>
+<rect x="420" y="157" width="288" height="40" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="1"/><text x="432" y="181.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Testing &amp; Debugging</text>
+<rect x="722" y="157" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="734" y="181.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Kernel Sched &amp; Tail Lat.</text>
+<rect x="118" y="206" width="288" height="40" rx="10" fill="#F6ECFB" stroke="#AF52DE" stroke-width="2"/><text x="130" y="230.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">Agentic AI &amp; LLM Ops</text>
+<rect x="420" y="206" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="432" y="230.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Program Analysis</text>
+<rect x="722" y="206" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="734" y="230.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Synchronization</text>
+<text x="102" y="280.0" font-size="13" font-weight="700" fill="#86868B" text-anchor="end">Tue</text>
+<rect x="118" y="255" width="288" height="40" rx="10" fill="#FFEBEA" stroke="#FF3B30" stroke-width="2"/><text x="130" y="279.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">RL Training at Scale</text>
+<rect x="420" y="255" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="432" y="279.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Disaggregated Memory</text>
+<rect x="722" y="255" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="734" y="279.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Confidential Computing</text>
+<rect x="118" y="304" width="288" height="40" rx="10" fill="#FFEBEA" stroke="#FF3B30" stroke-width="2"/><text x="130" y="328.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">Expert Mixture</text>
+<rect x="420" y="304" width="288" height="40" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="1"/><text x="432" y="328.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Power, Energy, Sustain.</text>
+<rect x="722" y="304" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="734" y="328.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Consensus &amp; BFT</text>
+<rect x="118" y="353" width="288" height="40" rx="10" fill="#FFEBEA" stroke="#FF3B30" stroke-width="2"/><text x="130" y="377.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">Training Reliability &amp; SDC</text>
+<rect x="420" y="353" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="432" y="377.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Filesystems &amp; I/O</text>
+<rect x="722" y="353" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="734" y="377.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Close to the Network</text>
+<rect x="118" y="402" width="288" height="40" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="2"/><text x="130" y="426.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">Graphs, ANN, Vector Search</text>
+<rect x="420" y="402" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="432" y="426.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Durable Storage</text>
+<rect x="722" y="402" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="734" y="426.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Virtualization &amp; Migration</text>
+<text x="102" y="476.0" font-size="13" font-weight="700" fill="#86868B" text-anchor="end">Wed</text>
+<rect x="118" y="451" width="288" height="40" rx="10" fill="#FFEBEA" stroke="#FF3B30" stroke-width="2"/><text x="130" y="475.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">Resource-Efficient Serving</text>
+<rect x="420" y="451" width="288" height="40" rx="10" fill="#FFEBEA" stroke="#FF3B30" stroke-width="1"/><text x="432" y="475.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">GPU Compilers &amp; Kernels</text>
+<rect x="722" y="451" width="288" height="40" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="1"/><text x="734" y="475.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Serverless + Resilience</text>
+<rect x="118" y="500" width="288" height="40" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="2"/><text x="130" y="524.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">Accelerator &amp; Device Virt.</text>
+<rect x="420" y="500" width="288" height="40" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="1"/><text x="432" y="524.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Fleet &amp; Cluster Sched.</text>
+<rect x="722" y="500" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="734" y="524.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Caching</text>
+<rect x="118" y="549" width="288" height="40" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="2"/><text x="130" y="573.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">Mobile &amp; Edge</text>
+<rect x="420" y="549" width="288" height="40" rx="10" fill="#FFF3E3" stroke="#FF9500" stroke-width="1"/><text x="432" y="573.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Wild Cards</text>
+<rect x="118" y="598" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="2"/><text x="130" y="622.5" font-size="12.5" font-weight="600" fill="#1D1D1F" text-anchor="start">Tooling Potpourri</text>
+<rect x="420" y="598" width="288" height="40" rx="10" fill="#F2F2F5" stroke="#8E8E93" stroke-width="1"/><text x="432" y="622.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Correctness</text>
+<circle cx="118" cy="673" r="7" fill="#FF3B30"/><text x="132" y="677.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">LLM is the object</text>
+<circle cx="287.2" cy="673" r="7" fill="#AF52DE"/><text x="301.2" y="677.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">LLM is the subject</text>
+<circle cx="464.0" cy="673" r="7" fill="#FF9500"/><text x="478.0" y="677.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">mixed / partial</text>
+<circle cx="618.0" cy="673" r="7" fill="#8E8E93"/><text x="632.0" y="677.5" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">no LLM</text>
+<text x="118" y="703" font-size="12" font-weight="400" fill="#86868B" text-anchor="start">Track 1 = 11 of 31 sessions; ML papers also sit in Track 2/3 (GPU Compilers, TrainMover, ...). Coloring: session-level majority.</text>
+</svg>

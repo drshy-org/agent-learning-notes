@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1060 500" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" role="img" aria-label="fig07-fork">
+<defs><filter id="ds-fig07-fork" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000" flood-opacity="0.10"/></filter></defs>
+<rect width="1060" height="500" rx="26" fill="#F5F5F7"/>
+<rect x="28" y="26" width="645.5" height="40" rx="10" fill="#1D1D1F"/><text x="46" y="52" font-size="17" font-weight="700" fill="#FFFFFF">Vector search forks on the medium, not the data (S19)</text>
+<rect x="330" y="92" width="400" height="64" rx="14" fill="#FFF3E3" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig07-fork)"/>
+<text x="530" y="118" font-size="14" font-weight="800" fill="#1D1D1F" text-anchor="middle">common enemy: the dependency chain</text>
+<text x="530" y="140" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="middle">best-first graph search waits on every read</text>
+<line x1="430" y1="156" x2="310.1584638786104" y2="205.78033038888492" stroke="#1D1D1F" stroke-width="2.5"/><polygon points="300,210 308.04862907305284,200.70109844957972 312.268298684168,210.85956232819012" fill="#1D1D1F"/>
+<line x1="630" y1="156" x2="749.8415361213896" y2="205.78033038888492" stroke="#1D1D1F" stroke-width="2.5"/><polygon points="760,210 747.7317013158321,210.85956232819012 751.9513709269471,200.70109844957972" fill="#1D1D1F"/>
+<rect x="80" y="216" width="420" height="180" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig07-fork)"/>
+<circle cx="80" cy="216" r="14" fill="#FF3B30" stroke="#FFFFFF" stroke-width="2.5"/><text x="80" y="220.5" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">G</text>
+<text x="106" y="244" font-size="14.5" font-weight="800" fill="#1D1D1F" text-anchor="start">FlowANN - keep the graph, break the chain</text>
+<text x="106" y="268" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">medium: HBM &lt;-&gt; DRAM (microseconds)</text>
+<text x="106" y="290" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">95.6% of nodes have a &gt;5-step window between</text>
+<text x="106" y="308" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">discovery and expansion -&gt; prefetch hides the reads</text>
+<text x="106" y="338" font-size="13.5" font-weight="700" fill="#34C759" text-anchor="start">billion-scale on ONE GPU, 4.08-45.7x</text>
+<rect x="106" y="358" width="250" height="22" rx="11" fill="#FF3B30"/><text x="231.0" y="373" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">graph wins where compute is free</text>
+<rect x="560" y="216" width="420" height="180" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig07-fork)"/>
+<circle cx="560" cy="216" r="14" fill="#34C759" stroke="#FFFFFF" stroke-width="2.5"/><text x="560" y="220.5" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">C</text>
+<text x="586" y="244" font-size="14.5" font-weight="800" fill="#1D1D1F" text-anchor="start">Helmsman - fire the graph, batch the I/O</text>
+<text x="586" y="268" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">medium: DRAM &lt;-&gt; SSD (a 100-1000x latency cliff)</text>
+<text x="586" y="290" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">clustering = dependency-free batched reads;</text>
+<text x="586" y="308" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">Gen5 SSDs (12 GB/s) re-price the old trade</text>
+<text x="586" y="338" font-size="13.5" font-weight="700" fill="#34C759" text-anchor="start">40 machines replace 35,000 cores + 0.35 PB DRAM</text>
+<rect x="586" y="358" width="280" height="22" rx="11" fill="#34C759"/><text x="726.0" y="373" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">clustering wins where latency is a cliff</text>
+<text x="530" y="440" font-size="14.5" font-weight="800" fill="#1D1D1F" text-anchor="middle">the right index structure is a function of the storage medium's latency</text>
+<text x="530" y="464" font-size="12.5" font-weight="400" fill="#86868B" text-anchor="middle">same object (embeddings), different rung of the hierarchy, different optimal data structure</text>
+</svg>

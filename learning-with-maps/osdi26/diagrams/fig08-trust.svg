@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1060 540" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,sans-serif" role="img" aria-label="fig08-trust">
+<defs><filter id="ds-fig08-trust" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000" flood-opacity="0.10"/></filter></defs>
+<rect width="1060" height="540" rx="26" fill="#F5F5F7"/>
+<rect x="28" y="26" width="749.0" height="40" rx="10" fill="#1D1D1F"/><text x="46" y="52" font-size="17" font-weight="700" fill="#FFFFFF">The ByteDance SDC pipeline, and the inverted trust chain (S16)</text>
+<rect x="70" y="104" width="292" height="168" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig08-trust)"/>
+<circle cx="70" cy="104" r="14" fill="#FF3B30" stroke="#FFFFFF" stroke-width="2.5"/><text x="70" y="108.5" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="94" y="132" font-size="15.5" font-weight="800" fill="#1D1D1F" text-anchor="start">AEGIS</text>
+<rect x="94" y="144" width="150" height="22" rx="11" fill="#8E8E93"/><text x="169.0" y="159" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">smoke alarm</text>
+<text x="94" y="192" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">online, inline sensors; verification</text>
+<text x="94" y="208" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">deferred into pipeline bubbles; 0.86%</text>
+<text x="94" y="224" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">overhead</text>
+<text x="94" y="254" font-size="12.5" font-weight="700" fill="#FF9500" text-anchor="start">35M GPU-h: 18 SDCs, 15 silent</text>
+<line x1="362" y1="188.0" x2="373.0" y2="188.0" stroke="#1D1D1F" stroke-width="2.5"/><polygon points="384,188.0 373.0,193.5 373.0,182.5" fill="#1D1D1F"/>
+<rect x="384" y="104" width="292" height="168" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig08-trust)"/>
+<circle cx="384" cy="104" r="14" fill="#FF3B30" stroke="#FFFFFF" stroke-width="2.5"/><text x="384" y="108.5" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="408" y="132" font-size="15.5" font-weight="800" fill="#1D1D1F" text-anchor="start">SDCHunter</text>
+<rect x="408" y="144" width="150" height="22" rx="11" fill="#8E8E93"/><text x="483.0" y="159" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">forensic examiner</text>
+<text x="408" y="192" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">deterministic replay of the production</text>
+<text x="408" y="208" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">job; DP-replica hash compare at PP</text>
+<text x="408" y="224" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">boundaries</text>
+<text x="408" y="254" font-size="12.5" font-weight="700" fill="#FF9500" text-anchor="start">days -&gt; under 1 hour to convict a GPU</text>
+<line x1="676" y1="188.0" x2="687.0" y2="188.0" stroke="#1D1D1F" stroke-width="2.5"/><polygon points="698,188.0 687.0,193.5 687.0,182.5" fill="#1D1D1F"/>
+<rect x="698" y="104" width="292" height="168" rx="14" fill="#FFFFFF" stroke="#E2E2E7" stroke-width="1" filter="url(#ds-fig08-trust)"/>
+<circle cx="698" cy="104" r="14" fill="#FF3B30" stroke="#FFFFFF" stroke-width="2.5"/><text x="698" y="108.5" font-size="13" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="722" y="132" font-size="15.5" font-weight="800" fill="#1D1D1F" text-anchor="start">OpGuard</text>
+<rect x="722" y="144" width="150" height="22" rx="11" fill="#8E8E93"/><text x="797.0" y="159" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">interrogator</text>
+<text x="722" y="192" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">bitwise longest-common-prefix over</text>
+<text x="722" y="208" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">operator boundaries; software or hardware,</text>
+<text x="722" y="224" font-size="11.5" font-weight="400" fill="#6E6E73" text-anchor="start">same oracle</text>
+<text x="722" y="254" font-size="12.5" font-weight="700" fill="#FF9500" text-anchor="start">21 SDC machines passed vendor checks</text>
+<text x="70" y="318" font-size="13.5" font-weight="700" fill="#1D1D1F" text-anchor="start">trust, by layer - the textbook ranking, inverted:</text>
+<rect x="70" y="342" width="220" height="32" rx="9" fill="#FFEBEA" stroke="#FF3B30" stroke-width="1.5"/><text x="84" y="363" font-size="13" font-weight="700" fill="#1D1D1F" text-anchor="start">GPU arithmetic</text>
+<text x="310" y="363" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">least trusted - FP32/FP64 ALUs fail silently; bf16 checksums never convicted anyone</text>
+<rect x="70" y="384" width="220" height="32" rx="9" fill="#FFF3E3" stroke="#FF9500" stroke-width="1.5"/><text x="84" y="405" font-size="13" font-weight="700" fill="#1D1D1F" text-anchor="start">HBM / memory</text>
+<text x="310" y="405" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">one single-bit flip never triggered ECC</text>
+<rect x="70" y="426" width="220" height="32" rx="9" fill="#FFF3E3" stroke="#FF9500" stroke-width="1.5"/><text x="84" y="447" font-size="13" font-weight="700" fill="#1D1D1F" text-anchor="start">software stack</text>
+<text x="310" y="447" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">racy kernels, missing barriers - OpGuard's home turf</text>
+<rect x="70" y="468" width="220" height="32" rx="9" fill="#E9F8EE" stroke="#34C759" stroke-width="1.5"/><text x="84" y="489" font-size="13" font-weight="700" fill="#1D1D1F" text-anchor="start">network</text>
+<text x="310" y="489" font-size="12.5" font-weight="400" fill="#6E6E73" text-anchor="start">MOST trusted - kept its old ECC / link-check discipline</text>
+</svg>
